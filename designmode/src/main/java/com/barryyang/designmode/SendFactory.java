@@ -10,4 +10,12 @@ public class SendFactory {
         }
         return null;
     }
+
+    public Sender productMail(){
+        return new MailSender();
+    }
+
+    public Sender productSms(){
+        return new SmsSender();
+    }
 }

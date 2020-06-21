@@ -13,7 +13,7 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
         SendFactory sendFactory = new SendFactory();
-        Sender sms = sendFactory.send("sms");
+        Sender sms = sendFactory.productSms();
         sms.send();
     }
 }
