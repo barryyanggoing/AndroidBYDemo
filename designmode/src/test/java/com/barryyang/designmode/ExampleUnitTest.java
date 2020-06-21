@@ -15,7 +15,8 @@ public class ExampleUnitTest {
 //        SendFactory sendFactory = new SendFactory();
 //        Sender sms = sendFactory.productSms();
 //        sms.send();
-        Sender productStaticMail = SendFactory.productStaticMail();
-        productStaticMail.send();
+//        Sender productStaticMail = SendFactory.productStaticMail();
+//        productStaticMail.send();
+
     }
 }
