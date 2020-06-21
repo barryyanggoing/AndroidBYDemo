@@ -1,0 +1,3 @@
+include ':designmode'
+include ':app'
+rootProject.name = "BarryYangDemo"
