@@ -1,4 +1,4 @@
-package com.barryyang.designmode;
+package com.barryyang.designmode.factory;
 
 public interface Provider {
 

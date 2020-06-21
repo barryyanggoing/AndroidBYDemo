@@ -1,5 +1,7 @@
 package com.barryyang.designmode;
 
+import com.barryyang.designmode.singleton.Singleton;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -17,6 +19,7 @@ public class ExampleUnitTest {
 //        sms.send();
 //        Sender productStaticMail = SendFactory.productStaticMail();
 //        productStaticMail.send();
-
+        String designModeName = Singleton.getInstance().getDesignModeName();
+        System.out.println(designModeName);
     }
 }

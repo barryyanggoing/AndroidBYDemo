@@ -1,4 +1,4 @@
-package com.barryyang.designmode;
+package com.barryyang.designmode.factory;
 
 public class SmsProviderFactory implements Provider {
     @Override
