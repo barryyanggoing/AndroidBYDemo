@@ -12,8 +12,10 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        SendFactory sendFactory = new SendFactory();
-        Sender sms = sendFactory.productSms();
-        sms.send();
+//        SendFactory sendFactory = new SendFactory();
+//        Sender sms = sendFactory.productSms();
+//        sms.send();
+        Sender productStaticMail = SendFactory.productStaticMail();
+        productStaticMail.send();
     }
 }

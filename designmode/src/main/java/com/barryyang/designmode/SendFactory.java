@@ -18,4 +18,8 @@ public class SendFactory {
     public Sender productSms(){
         return new SmsSender();
     }
+
+    public static Sender productStaticMail(){
+        return new MailSender();
+    }
 }
