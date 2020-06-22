@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         myAdApter = new MyAdapter();
         recyclerView.setAdapter(myAdApter);
         setData();
+
     }
 
     private void setData() {
