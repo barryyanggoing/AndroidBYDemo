@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +18,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView = findViewById(R.id.rv_list);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
-        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//        RecyclerView recyclerView = findViewById(R.id.rv_list);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
+//        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                return position == 0 ? 2 : 1;
+//            }
+//        });
+//        //mRecyclerView.addItemDecoration(addItemDecoration());
+//        recyclerView.setLayoutManager(gridLayoutManager);
+//        myAdApter = new MyAdapter();
+//        recyclerView.setAdapter(myAdApter);
+//        setData();
+        final VolumeView volumeView = findViewById(R.id.volume_view);
+        volumeView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public int getSpanSize(int position) {
-                return position == 0 ? 2 : 1;
+            public void onClick(View v) {
+                volumeView.refresh();
             }
         });
-        //mRecyclerView.addItemDecoration(addItemDecoration());
-        recyclerView.setLayoutManager(gridLayoutManager);
-        myAdApter = new MyAdapter();
-        recyclerView.setAdapter(myAdApter);
-        setData();
+
     }
 
     private void setData() {
