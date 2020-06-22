@@ -1,5 +1,6 @@
 package com.barryyang.designmode;
 
+import com.barryyang.designmode.builder.MyData;
 import com.barryyang.designmode.lishitihuan.Button;
 import com.barryyang.designmode.lishitihuan.TextView;
 import com.barryyang.designmode.lishitihuan.Window;
@@ -24,8 +25,11 @@ public class ExampleUnitTest {
 //        productStaticMail.send();
 //        String designModeName = Singleton.getInstance().getDesignModeName();
 //        System.out.println(designModeName);
+        //里氏替换原则
 //        Window window = new Window();
 //        window.show(new Button());
 //        window.show(new TextView());
+        //builder模式
+      //  new MyData.MyBuilder().setNumber(1).setNumber1(1).build();
     }
 }
