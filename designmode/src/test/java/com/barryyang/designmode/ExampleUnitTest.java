@@ -9,6 +9,7 @@ import com.barryyang.designmode.dimite.Wizard;
 import com.barryyang.designmode.factory.Factory;
 import com.barryyang.designmode.factory.Product;
 import com.barryyang.designmode.factory.ProductAFactory;
+import com.barryyang.designmode.kaibi.BookStore;
 import com.barryyang.designmode.lishitihuan.Button;
 import com.barryyang.designmode.lishitihuan.TextView;
 import com.barryyang.designmode.lishitihuan.Window;
@@ -52,5 +53,8 @@ public class ExampleUnitTest {
 //        teacher.commond(new GrounpLeader(list));
 //        InstallSoftware installSoftware = new InstallSoftware();
 //        installSoftware.install(new Wizard());
+        //开闭
+        BookStore bookStore = new BookStore();
+        bookStore.showBookInfo();
     }
 }
