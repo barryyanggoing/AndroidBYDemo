@@ -1,6 +1,9 @@
 package com.barryyang.designmode;
 
 import com.barryyang.designmode.builder.MyData;
+import com.barryyang.designmode.factory.Factory;
+import com.barryyang.designmode.factory.Product;
+import com.barryyang.designmode.factory.ProductAFactory;
 import com.barryyang.designmode.lishitihuan.Button;
 import com.barryyang.designmode.lishitihuan.TextView;
 import com.barryyang.designmode.lishitihuan.Window;
@@ -18,11 +21,11 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-//        SendFactory sendFactory = new SendFactory();
-//        Sender sms = sendFactory.productSms();
-//        sms.send();
-//        Sender productStaticMail = SendFactory.productStaticMail();
-//        productStaticMail.send();
+        //工厂模式
+//        Factory factory = new ProductAFactory();
+//        Product product = factory.createProduct();
+//        product.createName();
+        //单例模式
 //        String designModeName = Singleton.getInstance().getDesignModeName();
 //        System.out.println(designModeName);
         //里氏替换原则
@@ -30,6 +33,6 @@ public class ExampleUnitTest {
 //        window.show(new Button());
 //        window.show(new TextView());
         //builder模式
-      //  new MyData.MyBuilder().setNumber(1).setNumber1(1).build();
+//        new MyData.MyBuilder().setNumber(1).setNumber1(1).build();
     }
 }
