@@ -13,7 +13,8 @@ public class BookStore {
 
     static {
         System.out.println("添加数据");
-        BOOK_LIST.add(new NovelBook("天龙八部", 3200, "金庸"));
+       // BOOK_LIST.add(new NovelBook("天龙八部", 3200, "金庸"));
+        BOOK_LIST.add(new OffNovelBook("天龙八部", 3200, "金庸"));
     }
 
     public void showBookInfo() {
