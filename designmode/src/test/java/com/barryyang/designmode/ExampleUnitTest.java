@@ -1,9 +1,17 @@
 package com.barryyang.designmode;
 
+import androidx.annotation.NonNull;
+
+import com.barryyang.designmode.proxy.GamePlayIH;
 import com.barryyang.designmode.proxy.GamePlayerImpl;
 import com.barryyang.designmode.proxy.GamePlayerProxyImpl;
+import com.barryyang.designmode.proxy.IGamePlayer;
 
 import org.junit.Test;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -33,9 +41,17 @@ public class ExampleUnitTest {
 //        builder.setPartName("ssss");
 //        builder.build();
         //代理模式
-        GamePlayerProxyImpl gamePlayerProxy = new GamePlayerProxyImpl("张三");
-        gamePlayerProxy.login("", "");
-        gamePlayerProxy.killBoss();
-        gamePlayerProxy.upgrade();
+//        GamePlayerProxyImpl gamePlayerProxy = new GamePlayerProxyImpl("张三");
+//        gamePlayerProxy.login("", "");
+//        gamePlayerProxy.killBoss();
+//        gamePlayerProxy.upgrade();
+        IGamePlayer player = new GamePlayerImpl("张三");
+        InvocationHandler invocationHandler = new GamePlayIH(player);
+        ClassLoader classLoader = player.getClass().getClassLoader();
+        IGamePlayer proxy = (IGamePlayer) Proxy.newProxyInstance(classLoader, new Class[]{IGamePlayer.class}, invocationHandler);
+        proxy.login("", "");
+        proxy.killBoss();
+        proxy.upgrade();
     }
+
 }
