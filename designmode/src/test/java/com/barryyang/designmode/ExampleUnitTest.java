@@ -1,6 +1,9 @@
 package com.barryyang.designmode;
 
+import com.barryyang.designmode.builder.BenzModel;
+import com.barryyang.designmode.builder.Builder;
 import com.barryyang.designmode.builder.MyData;
+import com.barryyang.designmode.builder.ProductBuilder;
 import com.barryyang.designmode.dimite.Gril;
 import com.barryyang.designmode.dimite.GrounpLeader;
 import com.barryyang.designmode.dimite.InstallSoftware;
@@ -38,23 +41,17 @@ public class ExampleUnitTest {
         //单例模式
 //        String designModeName = Singleton.getInstance().getDesignModeName();
 //        System.out.println(designModeName);
-        //里氏替换原则
-//        Window window = new Window();
-//        window.show(new Button());
-//        window.show(new TextView());
         //builder模式
 //        new MyData.MyBuilder().setNumber(1).setNumber1(1).build();
-        //迪米特法则
-//        Teacher teacher = new Teacher();
-//        List<Gril> list = new ArrayList<>();
-//        list.add(new Gril());
-//        list.add(new Gril());
-//        list.add(new Gril());
-//        teacher.commond(new GrounpLeader(list));
-//        InstallSoftware installSoftware = new InstallSoftware();
-//        installSoftware.install(new Wizard());
-        //开闭
-        BookStore bookStore = new BookStore();
-        bookStore.showBookInfo();
+//        BenzModel benzModel = new BenzModel();
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("");
+//        list.add("");
+//        list.add("");
+//        benzModel.setSequence(list);
+//        benzModel.run();
+//        Builder builder = new ProductBuilder();
+//        builder.setPartName("ssss");
+//        builder.build();
     }
 }
