@@ -33,7 +33,7 @@ public class ExampleUnitTest {
 //        builder.setPartName("ssss");
 //        builder.build();
         //代理模式
-        GamePlayerProxyImpl gamePlayerProxy = new GamePlayerProxyImpl(new GamePlayerImpl());
+        GamePlayerProxyImpl gamePlayerProxy = new GamePlayerProxyImpl("张三");
         gamePlayerProxy.login("", "");
         gamePlayerProxy.killBoss();
         gamePlayerProxy.upgrade();

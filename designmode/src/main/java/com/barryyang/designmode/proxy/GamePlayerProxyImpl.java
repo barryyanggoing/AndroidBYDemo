@@ -4,8 +4,10 @@ public class GamePlayerProxyImpl implements IGamePlayer {
 
     IGamePlayer gamePlayer;
 
-    public GamePlayerProxyImpl(IGamePlayer gamePlayer) {
-        this.gamePlayer = gamePlayer;
+    public GamePlayerProxyImpl(String name) {
+        if (this.gamePlayer == null) {
+            this.gamePlayer = new GamePlayerImpl(name);
+        }
     }
 
     @Override
