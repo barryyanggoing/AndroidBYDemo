@@ -1,30 +1,9 @@
 package com.barryyang.designmode;
 
-import com.barryyang.designmode.builder.BenzModel;
-import com.barryyang.designmode.builder.Builder;
-import com.barryyang.designmode.builder.MyData;
-import com.barryyang.designmode.builder.ProductBuilder;
-import com.barryyang.designmode.dimite.Gril;
-import com.barryyang.designmode.dimite.GrounpLeader;
-import com.barryyang.designmode.dimite.InstallSoftware;
-import com.barryyang.designmode.dimite.Teacher;
-import com.barryyang.designmode.dimite.Wizard;
-import com.barryyang.designmode.factory.Factory;
-import com.barryyang.designmode.factory.Product;
-import com.barryyang.designmode.factory.ProductAFactory;
-import com.barryyang.designmode.kaibi.BookStore;
-import com.barryyang.designmode.lishitihuan.Button;
-import com.barryyang.designmode.lishitihuan.TextView;
-import com.barryyang.designmode.lishitihuan.Window;
-import com.barryyang.designmode.singleton.Singleton;
+import com.barryyang.designmode.proxy.GamePlayerImpl;
+import com.barryyang.designmode.proxy.GamePlayerProxyImpl;
 
 import org.junit.Test;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -53,5 +32,10 @@ public class ExampleUnitTest {
 //        Builder builder = new ProductBuilder();
 //        builder.setPartName("ssss");
 //        builder.build();
+        //代理模式
+        GamePlayerProxyImpl gamePlayerProxy = new GamePlayerProxyImpl(new GamePlayerImpl());
+        gamePlayerProxy.login("", "");
+        gamePlayerProxy.killBoss();
+        gamePlayerProxy.upgrade();
     }
 }
