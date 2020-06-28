@@ -11,15 +11,21 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class VolumeView extends View {
 
-    private float mOriCenterStartY;
-    private float mOriCenterEndY;
-    private float mOriCenterStartX;
-    private float mOriCenterEndX;
-
     private Paint mPaint;
-    private RectF mRectF;
+
+    private int radius;
+    private int maxHeight;
+    private int margin;
+    private int rectfWidth;
+    private int random;
+    private int recfCount = 30;
+    private List<RectF> list = new ArrayList<>();
 
     public VolumeView(Context context) {
         this(context, null);
@@ -37,42 +43,35 @@ public class VolumeView extends View {
     private void init() {
         mPaint = new Paint();
         mPaint.setColor(Color.RED);
+        maxHeight = getContext().getResources().getDimensionPixelSize(R.dimen.dimen_40);
+        margin = getContext().getResources().getDimensionPixelSize(R.dimen.dimen_15);
+        rectfWidth = getContext().getResources().getDimensionPixelSize(R.dimen.dimen_10);
+        random = getContext().getResources().getDimensionPixelSize(R.dimen.dimen_15);
+        radius = getContext().getResources().getDimensionPixelSize(R.dimen.dimen_5);
+        add();
+    }
+
+    private void add() {
+        for (int i = 0; i < recfCount; i++) {
+            int left = (i + 1) * margin + i * rectfWidth;
+            int right = (i + 1) * (margin + rectfWidth);
+            int top = new Random().nextInt(random);
+            int bottom = maxHeight - top;
+            Log.i("barryyang.volume", left + "--" + top + "-->" + right + "-->" + bottom);
+            list.add(new RectF(left, top, right, bottom));
+        }
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawRoundRect(mRectF, 5, 5, mPaint);
-//        canvas.drawRoundRect();
+        for (int i = 0; i < list.size(); i++) {
+            canvas.drawRoundRect(list.get(i), radius, radius, mPaint);
+        }
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        Log.i("barryyang.volume", w + "--" + h);
-        mOriCenterStartY = 0;
-        mOriCenterEndY = h;
-        mOriCenterStartX = w / 2.0f - 5;
-        mOriCenterEndX = w / 2.0f + 5;
-        oriCenterEndY = mOriCenterEndY;
-        mRectF = new RectF(mOriCenterStartX, mOriCenterStartY, mOriCenterEndX, mOriCenterEndY);
-    }
-
-    float oriCenterStartY = 0;
-    float oriCenterEndY = 0;
-
-    public void refresh() {
-        if (oriCenterStartY >   60) {
-            oriCenterStartY = oriCenterStartY - 5;
-        } else {
-            oriCenterStartY = oriCenterStartY + 5;
-        }
-        if (oriCenterEndY > mOriCenterEndY - 60) {
-            oriCenterEndY = oriCenterEndY - 5;
-        } else {
-            oriCenterEndY = oriCenterEndY + 5;
-        }
-        Log.i("barryyang.refresh", oriCenterStartY + "-->" + oriCenterEndY);
-        mRectF = new RectF(mOriCenterStartX, oriCenterStartY, mOriCenterEndX, oriCenterEndY);
-        invalidate();
+    public void invalidat() {
+        list.clear();
+        add();
+        postInvalidateOnAnimation();
     }
 }

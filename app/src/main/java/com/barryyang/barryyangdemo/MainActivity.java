@@ -11,6 +11,13 @@ import android.view.WindowManager;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,21 +29,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView = findViewById(R.id.rv_list);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
-        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                int itemViewType = myAdApter.getItemViewType(position);
-                return itemViewType == 1 ? 2 : 1;
-            }
-        });
-        //mRecyclerView.addItemDecoration(addItemDecoration());
-        recyclerView.setLayoutManager(gridLayoutManager);
-        myAdApter = new MyAdapter();
-        recyclerView.setAdapter(myAdApter);
-        setData();
-
+//        RecyclerView recyclerView = findViewById(R.id.rv_list);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
+//        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                int itemViewType = myAdApter.getItemViewType(position);
+//                return itemViewType == 1 ? 2 : 1;
+//            }
+//        });
+//        //mRecyclerView.addItemDecoration(addItemDecoration());
+//        recyclerView.setLayoutManager(gridLayoutManager);
+//        myAdApter = new MyAdapter();
+//        recyclerView.setAdapter(myAdApter);
+//        setData();
+        final VolumeView volumeView = findViewById(R.id.volume_view);
+        Disposable disposable = Observable.interval(300, TimeUnit.MILLISECONDS).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        volumeView.invalidat();
+                    }
+                });
     }
 
     private void setData() {
