@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -44,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
 //        recyclerView.setAdapter(myAdApter);
 //        setData();
         final VolumeView volumeView = findViewById(R.id.volume_view);
-        Disposable disposable = Observable.interval(300, TimeUnit.MILLISECONDS).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) throws Exception {
-                        volumeView.invalidat();
-                    }
-                });
+        volumeView.invalidat();
+        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                volumeView.invalidat();
+            }
+        });
     }
 
     private void setData() {
