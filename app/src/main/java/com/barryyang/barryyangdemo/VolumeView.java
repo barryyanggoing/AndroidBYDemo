@@ -88,19 +88,14 @@ public class VolumeView extends View {
     }
 
     private void showAnimator() {
-
-        RectF rectF = list.get(0);
-        final int endTop = rectF.top == 0 ? minHeight : maxHeight;
-
+        final int top = (int) list.get(0).top;
         ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 100);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fraction = (int) animation.getAnimatedValue() / 100f;
                 IntEvaluator intEvaluator = new IntEvaluator();
-                int top = (int) list.get(0).top;
-                Log.i("xx", top + "--" + maxHeight);
-                int nowTop = intEvaluator.evaluate(fraction, 10, maxHeight);
+                int nowTop = intEvaluator.evaluate(fraction, top, 0);
                 float nowBottom = maxHeight - nowTop;
                 list.get(0).top = nowTop;
                 list.get(0).bottom = nowBottom;
@@ -110,7 +105,7 @@ public class VolumeView extends View {
         valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
         valueAnimator.setInterpolator(new LinearInterpolator());
-        valueAnimator.setDuration(2000);
+        valueAnimator.setDuration(500);
         valueAnimator.start();
     }
 
