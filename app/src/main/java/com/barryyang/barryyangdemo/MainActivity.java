@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
 //        myAdApter = new MyAdapter();
 //        recyclerView.setAdapter(myAdApter);
 //        setData();
-        final VolumeView volumeView = findViewById(R.id.volume_view);
-        volumeView.invalidat();
-        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                volumeView.invalidat();
-            }
-        });
+//        final VolumeView volumeView = findViewById(R.id.volume_view);
+//        volumeView.invalidat();
+//        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                volumeView.invalidat();
+//            }
+//        });
     }
 
     private void setData() {
