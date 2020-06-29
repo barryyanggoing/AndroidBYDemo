@@ -82,9 +82,9 @@ public class VolumeView extends View {
         mRectWidth = typedArray.getDimensionPixelSize(R.styleable.VolumeView_volume_view_rectWidth, getResources().getDimensionPixelSize(R.dimen.dimen_10));
         mRectRadius = typedArray.getDimensionPixelSize(R.styleable.VolumeView_volume_view_radius, getResources().getDimensionPixelSize(R.dimen.dimen_5));
         mRectColor = typedArray.getColor(R.styleable.VolumeView_volume_view_color, Color.RED);
-        mDelayTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_delayTime, 300);
-        mRandomTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_randomTime, 200);
-        mStartTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_startTime, 350);
+        mDelayTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_delayTime, 500);
+        mRandomTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_randomTime, 300);
+        mStartTime = typedArray.getInteger(R.styleable.VolumeView_volume_view_startTime, 500);
         typedArray.recycle();
         init();
     }
