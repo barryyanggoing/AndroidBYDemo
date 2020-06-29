@@ -1,3 +1,4 @@
+include ':VolumeView'
 include ':fanxingdemo'
 include ':designmode'
 include ':app'

@@ -44,35 +44,27 @@ public class MainActivity extends AppCompatActivity {
 //        myAdApter = new MyAdapter();
 //        recyclerView.setAdapter(myAdApter);
 //        setData();
-//        final VolumeView volumeView = findViewById(R.id.volume_view);
-//        volumeView.invalidat();
-//        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                volumeView.invalidat();
+    }
+
+//    private void setData() {
+//        ArrayList<ItemInfo> list = new ArrayList<>();
+//        for (int i = 0; i < COUNT; i++) {
+//            int viewType = getViewType(COUNT, i);
+//            list.add(new ItemInfo(viewType, "第" + i + "个item"));
+//        }
+//        myAdApter.setDataList(list);
+//    }
+//
+//    private int getViewType(int size, int pos) {
+//        if (size == 4) {
+//            return 2;//占半列的样式
+//        } else if (size == 3) {
+//            if (pos == 0) {
+//                return 1;//占一列的样式
 //            }
-//        });
-    }
-
-    private void setData() {
-        ArrayList<ItemInfo> list = new ArrayList<>();
-        for (int i = 0; i < COUNT; i++) {
-            int viewType = getViewType(COUNT, i);
-            list.add(new ItemInfo(viewType, "第" + i + "个item"));
-        }
-        myAdApter.setDataList(list);
-    }
-
-    private int getViewType(int size, int pos) {
-        if (size == 4) {
-            return 2;//占半列的样式
-        } else if (size == 3) {
-            if (pos == 0) {
-                return 1;//占一列的样式
-            }
-            return 2;//占
-        }
-        return 1;
-    }
+//            return 2;//占
+//        }
+//        return 1;
+//    }
 
 }
