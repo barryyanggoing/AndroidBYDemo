@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.barryyang.volumeview.VolumeGroup;
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        VolumeGroup volumeGroup = findViewById(R.id.xx);
+        volumeGroup.addVolumeView();
 //        RecyclerView recyclerView = findViewById(R.id.rv_list);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
 //        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
