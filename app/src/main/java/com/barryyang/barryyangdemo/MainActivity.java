@@ -1,15 +1,21 @@
 package com.barryyang.barryyangdemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.barryyang.volumeview.VolumeGroup;
 
+import java.security.PublicKey;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +37,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        VolumeGroup volumeGroup = findViewById(R.id.xx);
-        volumeGroup.addVolumeView();
+        setContentView(R.layout.test);
+
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i = 0; i < 30; i++) {
+            list.add("sadasdasdas");
+        }
+        RecyclerView recyclerView = findViewById(R.id.recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(new TestAdapter(list));
+
+//        VolumeGroup volumeGroup = findViewById(R.id.xx);
+//        volumeGroup.addVolumeView();
+
 //        RecyclerView recyclerView = findViewById(R.id.rv_list);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
 //        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -70,5 +87,37 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return 1;
 //    }
+
+    public class TestAdapter extends RecyclerView.Adapter {
+        List<String> list;
+
+        public TestAdapter(List<String> list) {
+            this.list = list;
+        }
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new TestViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.test_item, parent, false));
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return list.size();
+        }
+
+        public class TestViewHolder extends RecyclerView.ViewHolder {
+
+            public TestViewHolder(@NonNull View itemView) {
+                super(itemView);
+            }
+        }
+    }
+
 
 }
