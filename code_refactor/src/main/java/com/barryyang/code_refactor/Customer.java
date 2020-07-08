@@ -61,10 +61,10 @@ public class Customer {
             if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRental() > 1) {
                 frequentRenterPoints++;
             }
-            result += rental.getMovie().getTitle() + "\n" + thisAmount + "\n";
+            result += "书籍名称：" + rental.getMovie().getTitle() + "\n" + "单价："+thisAmount + "\n";
             totalAmount += thisAmount;
         }
-        result += "金额是：" + totalAmount + "\n";
+        result += "总金额是：" + totalAmount + "\n";
         result += "积分：" + frequentRenterPoints;
         return result;
     }

@@ -12,6 +12,13 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        Customer customer = new Customer("张三");
+        Movie movie = new Movie();
+        movie.setTitle("改善既有代码设计");
+        movie.setPriceCode(Movie.CHILDRENS);
+        Rental rental = new Rental(3, movie);
+        customer.addRental(rental);
+        String statement = customer.statement();
+        System.out.println(statement);
     }
 }
