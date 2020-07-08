@@ -37,4 +37,35 @@ public class Rental {
     public void setMovie(Movie movie) {
         this.movie = movie;
     }
+
+    public double getCharge() {
+        double result = 0;
+        switch (getMovie().getPriceCode()) {
+            case Movie.REGULAR:
+                result += 2;
+                if (getDaysRental() > 2) {
+                    result += (getDaysRental() - 2) * 1.5;
+                }
+                break;
+            case Movie.NEW_RELEASE:
+                result += getDaysRental() * 3;
+                break;
+            default:
+                result += 1.5;
+                if (getDaysRental() > 3) {
+                    result += (getDaysRental() - 3) * 1.5;
+                }
+                break;
+        }
+        return result;
+    }
+
+    public int getFrequentRenterPoints() {
+        int frequentRenterPoints = 0;
+        if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) && getDaysRental() > 1) {
+            frequentRenterPoints++;
+        }
+        return frequentRenterPoints;
+    }
+
 }
