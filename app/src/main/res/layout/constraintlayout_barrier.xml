@@ -6,17 +6,19 @@
 
     <TextView
         android:id="@+id/TextView1"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
+        android:text="asdasdsasssssssssssssssssssssssssssss"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextView2"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
+        android:text="asdasdsasssssssssssssssssssssssssssssasdasdsasssssssssssssssssssssssssssss"
         app:layout_constraintLeft_toLeftOf="@id/TextView1"
         app:layout_constraintTop_toBottomOf="@+id/TextView1" />
 
@@ -32,7 +34,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="@dimen/dimen_10"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintLeft_toRightOf="@+id/barrier" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
