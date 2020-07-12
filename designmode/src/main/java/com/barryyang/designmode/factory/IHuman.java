@@ -10,7 +10,7 @@ public interface IHuman {
      *
      * @return 皮肤颜色
      */
-    String getHumanColor();
+    void getHumanColor();
 
     /**
      * 说话

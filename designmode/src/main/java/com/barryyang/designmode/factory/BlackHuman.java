@@ -6,12 +6,12 @@ package com.barryyang.designmode.factory;
 public class BlackHuman implements IHuman{
 
     @Override
-    public String getHumanColor() {
-        return null;
+    public void getHumanColor() {
+        System.out.println("黑色");
     }
 
     @Override
     public void humanTalk() {
-
+        System.out.println("English");
     }
 }

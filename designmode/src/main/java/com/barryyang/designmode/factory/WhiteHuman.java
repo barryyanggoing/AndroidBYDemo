@@ -1,13 +1,14 @@
 package com.barryyang.designmode.factory;
 
-public class WhiteHuman implements IHuman{
+public class WhiteHuman implements IHuman {
+
     @Override
-    public String getHumanColor() {
-        return null;
+    public void getHumanColor() {
+        System.out.println("白色");
     }
 
     @Override
     public void humanTalk() {
-
+        System.out.println("不知道什么鸟语");
     }
 }
