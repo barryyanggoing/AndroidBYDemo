@@ -5,8 +5,18 @@ import androidx.annotation.NonNull;
 import com.barryyang.designmode.abstract_factory.AbstractFactory;
 import com.barryyang.designmode.abstract_factory.Color;
 import com.barryyang.designmode.abstract_factory.FactoryProvider;
+import com.barryyang.designmode.adapter.AudioMediaPlayer;
+import com.barryyang.designmode.bridge.Circle;
+import com.barryyang.designmode.bridge.RedCircle;
 import com.barryyang.designmode.factory.IHuman;
 import com.barryyang.designmode.factory.PeopleFactory;
+import com.barryyang.designmode.interceptor.DebugInterceptor;
+import com.barryyang.designmode.interceptor.DefaultInterceptor;
+import com.barryyang.designmode.interceptor.InterceptorCallBack;
+import com.barryyang.designmode.interceptor.MediaPlayerSetting;
+import com.barryyang.designmode.interceptor.ReleaseInterceptor;
+import com.barryyang.designmode.observer.BinaryObserver;
+import com.barryyang.designmode.observer.Observable;
 import com.barryyang.designmode.proxy.GamePlayIH;
 import com.barryyang.designmode.proxy.GamePlayerImpl;
 import com.barryyang.designmode.proxy.GamePlayerProxyImpl;
@@ -14,12 +24,15 @@ import com.barryyang.designmode.proxy.IGamePlayer;
 import com.barryyang.designmode.singleton.Singleton;
 import com.barryyang.designmode.strategy.Context;
 import com.barryyang.designmode.strategy.XmStrategy;
+import com.barryyang.designmode.yuanxing.Shape;
+import com.barryyang.designmode.yuanxing.ShapeCache;
 
 import org.junit.Test;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -34,9 +47,9 @@ public class ExampleUnitTest {
 //        yellow.getHumanColor();
 //        yellow.humanTalk();
         //抽象工厂模式
-        AbstractFactory abstractFactory = FactoryProvider.getFactory("color");
-        Color white = abstractFactory.getColor("white");
-        white.getColor();
+//        AbstractFactory abstractFactory = FactoryProvider.getFactory("color");
+//        Color white = abstractFactory.getColor("white");
+//        white.getColor();
         //单例模式
 //        String designModeName = Singleton.getInstance().getDesignModeName();
 //        System.out.println(designModeName);
@@ -70,6 +83,37 @@ public class ExampleUnitTest {
 //        context.excuteStrategy();
         //单例模式
         //Singleton.getInstance().setMessage();
+        //观察者模式
+//        Observable observable = new Observable();
+//        BinaryObserver binaryObserver = new BinaryObserver(observable);
+//        observable.setState("11");
+        //原型模式
+//        ShapeCache.loadCache();
+//        Shape shape = ShapeCache.getShape("1");
+//        System.out.println(shape.getType());
+        //适配器模式
+//        AudioMediaPlayer audioMediaPlayer = new AudioMediaPlayer();
+//        audioMediaPlayer.play("mp3","MP3 path");
+        //桥接模式
+//        Circle circle = new Circle(1, 1, 1, new RedCircle());
+//        circle.draw();
+        MediaPlayerSetting.Builder builder = new MediaPlayerSetting.Builder()
+                .addPrePlayInterceptor(new DebugInterceptor())
+                .addPrePlayInterceptor(new ReleaseInterceptor());
+        builder.build();
+
+        DefaultInterceptor defaultInterceptor = new DebugInterceptor();
+        defaultInterceptor.interceptor("debug", new InterceptorCallBack() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onFailed() {
+                System.out.println("debug");
+            }
+        });
     }
 
 }
