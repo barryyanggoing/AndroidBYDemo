@@ -1,12 +1,9 @@
 package com.barryyang.algorithm;
 
 import com.barryyang.algorithm.erfen_query.ErFenQuery;
+import com.barryyang.algorithm.letcode.LetCode_01;
 
 import org.junit.Test;
-
-import java.util.Random;
-
-import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -17,7 +14,10 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
        //erfenquery();
-        normalquery();
+        //normalquery();
+        //SelectionSort.sort();
+       // MaoPaoSort.sort(new int[]{1,4,3});
+        LetCode_01.subTarget2(new int[]{1,4,3,5,7,8},4);
     }
 
     private void normalquery() {
