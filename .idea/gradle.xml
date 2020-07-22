@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/code_refactor" />
             <option value="$PROJECT_DIR$/designmode" />
             <option value="$PROJECT_DIR$/fanxingdemo" />
+            <option value="$PROJECT_DIR$/smallestwidth" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
