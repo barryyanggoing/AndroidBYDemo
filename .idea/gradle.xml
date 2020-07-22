@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/designmode" />
             <option value="$PROJECT_DIR$/fanxingdemo" />
             <option value="$PROJECT_DIR$/smallestwidth" />
+            <option value="$PROJECT_DIR$/thread" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
