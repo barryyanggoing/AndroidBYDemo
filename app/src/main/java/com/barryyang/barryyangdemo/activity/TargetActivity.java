@@ -1,13 +1,16 @@
 package com.barryyang.barryyangdemo.activity;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.barryyang.barryyangdemo.MainActivity;
 import com.barryyang.barryyangdemo.R;
 
 /**
@@ -25,6 +28,10 @@ public class TargetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_target);
         Log.d(TAG, "onCreate: ");
+        if (savedInstanceState != null) {
+            String barryyang = savedInstanceState.getString("barryyang");
+            Log.d(TAG, "onCreate: --------" + barryyang);
+        }
     }
 
     @Override
@@ -58,20 +65,33 @@ public class TargetActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
         Log.d(TAG, "onSaveInstanceState: ");
+        outState.putString("barryyang", "异常退出");
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Log.d(TAG, "onRestoreInstanceState: ");
+        String barryyang = savedInstanceState.getString("barryyang");
+        Log.d(TAG, "onRestoreInstanceState: --------" + barryyang);
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d(TAG, "onConfigurationChanged: ");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: ");
+    }
+
+    public void jump(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

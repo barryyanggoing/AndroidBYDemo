@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.activity.TestActivity;
@@ -14,6 +15,8 @@ import com.barryyang.barryyangdemo.activity.TestActivity;
  * @author barryyang
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +31,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jump(View view) {
         startActivity(new Intent(this, TestActivity.class));
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d(TAG, "onNewIntent: ");
     }
 }

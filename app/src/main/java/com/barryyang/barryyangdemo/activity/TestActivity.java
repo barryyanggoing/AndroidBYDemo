@@ -16,15 +16,15 @@ import com.barryyang.barryyangdemo.R;
  * D/TestActivity: onCreate:
  * D/TestActivity: onStart:
  * D/TestActivity: onResume:
- *
+ * <p>
  * 2.TestActivity跳转到TargetActivity
- *
+ * <p>
  * D/TestActivity: onPause:
  * D/TargetActivity: onCreate:
  * D/TargetActivity: onStart:
  * D/TargetActivity: onResume:
  * D/TestActivity: onStop:
- *
+ * <p>
  * 3.TargetActivity返回到TestActivity
  * D/TargetActivity: onPause:
  * D/TestActivity: onRestart:
@@ -32,6 +32,8 @@ import com.barryyang.barryyangdemo.R;
  * D/TestActivity: onResume:
  * D/TargetActivity: onStop:
  * D/TargetActivity: onDestroy:
+ * <p>
+ * 4.查看栈Activity信息adb shell dumpsys activity | grep com.barryyang.barryyangdemo
  */
 
 /**
