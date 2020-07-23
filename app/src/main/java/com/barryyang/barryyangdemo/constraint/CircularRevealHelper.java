@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo;
+package com.barryyang.barryyangdemo.constraint;
 
 import android.animation.Animator;
 import android.content.Context;
