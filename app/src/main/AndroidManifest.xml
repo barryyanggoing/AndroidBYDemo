@@ -41,7 +41,17 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".service.TargetServiceActivity" />
 
+        <service
+            android:name=".service.LocalService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.barryyang.barryyangdemo.local" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>

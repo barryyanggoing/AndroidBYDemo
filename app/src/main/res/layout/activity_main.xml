@@ -5,10 +5,18 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/btn_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="jump"
-        android:text="Activity生命周期测试"
+        android:onClick="jumpActivity"
+        android:text="Activity测试DEMO"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jumpService"
+        android:text="Service测试DEMO"
+        app:layout_constraintTop_toBottomOf="@id/btn_activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

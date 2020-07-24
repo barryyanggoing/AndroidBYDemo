@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="StartService"
+        android:textColor="#fff"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="playMusic"
+        android:text="playMusic"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pauseMusic"
+        android:text="pauseMusic"
+        app:layout_constraintTop_toBottomOf="@id/btn_start" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="stopMusic"
+        android:text="stopMusic"
+        app:layout_constraintTop_toBottomOf="@id/btn_pause" />
+
+    <TextView
+        android:id="@+id/tv_title1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="IntentService"
+        android:textColor="#fff"
+        app:layout_constraintTop_toBottomOf="@id/btn_stop" />
+
+    <Button
+        android:id="@+id/btn_intent_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startIntentService"
+        android:text="start_Intent_Service"
+        app:layout_constraintTop_toBottomOf="@id/tv_title1" />
+
+    <TextView
+        android:id="@+id/tv_title2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="BindService"
+        android:textColor="#fff"
+        app:layout_constraintTop_toBottomOf="@id/btn_intent_service" />
+
+    <Button
+        android:id="@+id/btn_bind_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bindPlayMusic"
+        android:text="playMusic"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2" />
+
+    <Button
+        android:id="@+id/btn_bind_pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bindPauseMusic"
+        android:text="pauseMusic"
+        app:layout_constraintTop_toBottomOf="@id/btn_bind_play" />
+
+    <Button
+        android:id="@+id/btn_bind_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bindStopMusic"
+        android:text="stopMusic"
+        app:layout_constraintTop_toBottomOf="@id/btn_bind_pause" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="bindReplayMusic"
+        android:text="replayMusic"
+        app:layout_constraintTop_toBottomOf="@id/btn_bind_stop" />
+</androidx.constraintlayout.widget.ConstraintLayout>

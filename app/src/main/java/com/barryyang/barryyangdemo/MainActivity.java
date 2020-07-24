@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.activity.TestActivity;
+import com.barryyang.barryyangdemo.service.TargetServiceActivity;
 
 /**
  * 测试各种
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void jump(View view) {
+    public void jumpActivity(View view) {
         startActivity(new Intent(this, TestActivity.class));
     }
 
@@ -37,5 +38,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.d(TAG, "onNewIntent: ");
+    }
+
+    /**
+     * Service生命周期测试
+     *
+     * @param view
+     */
+    public void jumpService(View view) {
+        startActivity(new Intent(this, TargetServiceActivity.class));
     }
 }
