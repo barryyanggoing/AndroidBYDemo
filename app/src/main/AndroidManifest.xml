@@ -19,6 +19,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <activity
@@ -26,6 +27,20 @@
             android:configChanges="orientation|screenSize" />
 
         <activity android:name=".activity.TestActivity" />
+
+
+        <activity android:name=".activity.IntentFilterActivity">
+
+            <intent-filter>
+                <action android:name="com.barryyang.barryyangdemo.IntentFilter" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.barryyang.barryyangdemo.IntentFilter.category" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+        </activity>
 
     </application>
 

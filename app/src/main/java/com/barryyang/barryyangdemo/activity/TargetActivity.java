@@ -2,6 +2,7 @@ package com.barryyang.barryyangdemo.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -93,5 +94,24 @@ public class TargetActivity extends AppCompatActivity {
 
     public void jump(View view) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    /**
+     * IntentFilter匹配规则：
+     * 1.action的匹配要求Intent中的action存在且必须和过滤规则中的其中一个action相同。另外，action区分大小写，大小写不同字符串相同的action会匹配失败。
+     * 2.Intent中如果出现了category，不管有几个category，对于每个category来说，它必须是过滤规则中已经定义了的category。
+     * 当然，Intent中可以没有category，如果没有category的话，按照上面的描述，这个Intent仍然可以匹配成功。
+     * 3.为什么不设置category也可以匹配呢？
+     * 因为系统在调用startActivity或者startActivityResult的时候，会默认的加上android.intent.category.DEFAULT，所以在使用隐式的Intent的时候，必须在intent-filter中指定
+     * android.intent.category.DEFAULT。
+     *
+     * @param view
+     */
+    public void jumpIntentFilterActivity(View view) {
+        Intent intent = new Intent();
+        intent.setAction("com.barryyang.barryyangdemo.IntentFilter");
+        intent.addCategory("com.barryyang.barryyangdemo.IntentFilter.category");
+        intent.setType("text/plain");
+        startActivity(intent);
     }
 }
