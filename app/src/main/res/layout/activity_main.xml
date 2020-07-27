@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_activity"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="jumpActivity"
-        android:text="Activity测试DEMO"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="jumpService"
-        android:text="Service测试DEMO"
-        app:layout_constraintTop_toBottomOf="@id/btn_activity" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="四大组件"
+            android:textColor="#fff"
+            android:textSize="@dimen/dimen_18" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpActivity"
+            android:text="Activity测试DEMO" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpService"
+            android:text="Service测试DEMO" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpBroadcast"
+            android:text="Broadcast测试DEMO" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpContentProvider"
+            android:text="Contentprovider测试DEMO" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="View"
+            android:textColor="#fff"
+            android:textSize="@dimen/dimen_18" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpCustomView"
+            android:text="自定义View测试DEMO" />
+
+    </LinearLayout>
+
+</ScrollView>

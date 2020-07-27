@@ -48,4 +48,30 @@ public class MainActivity extends AppCompatActivity {
     public void jumpService(View view) {
         startActivity(new Intent(this, TargetServiceActivity.class));
     }
+
+    /**
+     * 测试广播
+     *
+     * @param view
+     */
+    public void jumpBroadcast(View view) {
+
+    }
+
+    /**
+     * 测试内容提供者
+     *
+     * @param view
+     */
+    public void jumpContentProvider(View view) {
+    }
+
+    /**
+     * 自定义view
+     *
+     * @param view
+     */
+    public void jumpCustomView(View view) {
+        startActivity(new Intent(this, CustomActivity.class));
+    }
 }

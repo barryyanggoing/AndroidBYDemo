@@ -42,6 +42,7 @@
 
         </activity>
         <activity android:name=".service.TargetServiceActivity" />
+        <activity android:name=".CustomActivity" />
 
         <service
             android:name=".service.LocalService"
