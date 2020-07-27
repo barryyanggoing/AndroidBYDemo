@@ -1,9 +1,11 @@
-package com.barryyang.barryyangdemo;
+package com.barryyang.barryyangdemo.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.barryyang.barryyangdemo.R;
 
 /**
  * @author : BarryYang
