@@ -11,8 +11,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.barryyang.barryyangdemo.view.CustomGroupView
+        android:id="@+id/custom_group_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_30"
@@ -37,5 +37,11 @@
             android:text="btnaaaa" />
 
     </com.barryyang.barryyangdemo.view.CustomGroupView>
+
+    <com.barryyang.barryyangdemo.view.ClockView
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_group_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
