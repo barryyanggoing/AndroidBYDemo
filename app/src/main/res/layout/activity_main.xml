@@ -70,6 +70,12 @@
             android:layout_height="wrap_content"
             android:onClick="jumpBitmap"
             android:text="Bitmap测试DEMO" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpLruCache"
+            android:text="LruCache测试DEMO" />
     </LinearLayout>
 
 </ScrollView>

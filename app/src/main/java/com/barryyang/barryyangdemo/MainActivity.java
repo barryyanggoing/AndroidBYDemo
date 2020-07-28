@@ -10,6 +10,7 @@ import android.view.View;
 import com.barryyang.barryyangdemo.activity.CustomActivity;
 import com.barryyang.barryyangdemo.activity.TestActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
+import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
 import com.barryyang.barryyangdemo.service.TargetServiceActivity;
 
 /**
@@ -84,5 +85,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpBitmap(View view) {
         startActivity(new Intent(this, BitmapActivity.class));
+    }
+
+    /**
+     * LruCache
+     *
+     * @param view
+     */
+    public void jumpLruCache(View view) {
+        startActivity(new Intent(this, LruCacheActivity.class));
     }
 }
