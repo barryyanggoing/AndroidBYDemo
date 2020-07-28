@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.barryyang.barryyangdemo.activity.CustomActivity;
 import com.barryyang.barryyangdemo.activity.TestActivity;
+import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.service.TargetServiceActivity;
 
 /**
@@ -74,5 +75,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpCustomView(View view) {
         startActivity(new Intent(this, CustomActivity.class));
+    }
+
+    /**
+     * bitmap优化
+     *
+     * @param view
+     */
+    public void jumpBitmap(View view) {
+        startActivity(new Intent(this, BitmapActivity.class));
     }
 }
