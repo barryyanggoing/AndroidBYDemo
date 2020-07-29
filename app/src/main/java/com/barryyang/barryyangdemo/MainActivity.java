@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.activity.CustomActivity;
+import com.barryyang.barryyangdemo.activity.StreamActivity;
 import com.barryyang.barryyangdemo.activity.TestActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
@@ -94,5 +95,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpLruCache(View view) {
         startActivity(new Intent(this, LruCacheActivity.class));
+    }
+
+    /**
+     * 输入输出流
+     * @param view
+     */
+    public void jumpStream(View view) {
+        startActivity(new Intent(this, StreamActivity.class));
     }
 }
