@@ -2,7 +2,6 @@ package com.barryyang.barryyangdemo.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.barryyang.barryyangdemo.MainActivity;
 import com.barryyang.barryyangdemo.R;
 
 /**

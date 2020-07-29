@@ -42,15 +42,15 @@ public class BitmapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitmap);
         //优化前
-        bitmapWithDrawable("mdpi", R.id.iv_bitmap_m, R.mipmap.testm, (TextView) findViewById(R.id.tv_m_info));
-        bitmapWithDrawable("hdpi", R.id.iv_bitmap_h, R.mipmap.testh, (TextView) findViewById(R.id.tv_h_info));
-        bitmapWithDrawable("xhdpi", R.id.iv_bitmap_xh, R.mipmap.testxh, (TextView) findViewById(R.id.tv_xh_info));
-        bitmapWithDrawable("xxhdpi", R.id.iv_bitmap_xxh, R.mipmap.testxxh, (TextView) findViewById(R.id.tv_xxh_info));
+        bitmapWithDrawable("mdpi", R.id.iv_bitmap_m, R.drawable.testm, (TextView) findViewById(R.id.tv_m_info));
+        bitmapWithDrawable("hdpi", R.id.iv_bitmap_h, R.drawable.testh, (TextView) findViewById(R.id.tv_h_info));
+        bitmapWithDrawable("xhdpi", R.id.iv_bitmap_xh, R.drawable.testxh, (TextView) findViewById(R.id.tv_xh_info));
+        bitmapWithDrawable("xxhdpi", R.id.iv_bitmap_xxh, R.drawable.testxxh, (TextView) findViewById(R.id.tv_xxh_info));
         //优化后
-        optimizeBitmap((TextView) findViewById(R.id.tv_m_info), R.mipmap.testm, Bitmap.Config.RGB_565, 2);
-        optimizeBitmap((TextView) findViewById(R.id.tv_h_info), R.mipmap.testh, Bitmap.Config.RGB_565, 2);
-        optimizeBitmap((TextView) findViewById(R.id.tv_xh_info), R.mipmap.testxh, Bitmap.Config.RGB_565, 2);
-        optimizeBitmap((TextView) findViewById(R.id.tv_xxh_info), R.mipmap.testxxh, Bitmap.Config.RGB_565, 2);
+        optimizeBitmap((TextView) findViewById(R.id.tv_m_info), R.drawable.testm, Bitmap.Config.RGB_565, 2);
+        optimizeBitmap((TextView) findViewById(R.id.tv_h_info), R.drawable.testh, Bitmap.Config.RGB_565, 2);
+        optimizeBitmap((TextView) findViewById(R.id.tv_xh_info), R.drawable.testxh, Bitmap.Config.RGB_565, 2);
+        optimizeBitmap((TextView) findViewById(R.id.tv_xxh_info), R.drawable.testxxh, Bitmap.Config.RGB_565, 2);
     }
 
     /**

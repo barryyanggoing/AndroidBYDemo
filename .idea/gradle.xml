@@ -11,14 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/VolumeView" />
-            <option value="$PROJECT_DIR$/algorithm" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/code_refactor" />
-            <option value="$PROJECT_DIR$/designmode" />
-            <option value="$PROJECT_DIR$/fanxingdemo" />
-            <option value="$PROJECT_DIR$/smallestwidth" />
-            <option value="$PROJECT_DIR$/thread" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

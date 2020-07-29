@@ -1,9 +1,2 @@
-include ':thread'
-include ':smallestwidth'
-include ':algorithm'
-include ':code_refactor'
-include ':VolumeView'
-include ':fanxingdemo'
-include ':designmode'
 include ':app'
 rootProject.name = "BarryYangDemo"
