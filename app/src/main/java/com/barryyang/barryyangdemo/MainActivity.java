@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.barryyang.barryyangdemo.activity.CustomActivity;
-import com.barryyang.barryyangdemo.activity.StreamActivity;
+import com.barryyang.barryyangdemo.java.JavaActivity;
+import com.barryyang.barryyangdemo.view.CustomActivity;
+import com.barryyang.barryyangdemo.stream.StreamActivity;
 import com.barryyang.barryyangdemo.activity.TestActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
@@ -99,9 +100,19 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 输入输出流
+     *
      * @param view
      */
     public void jumpStream(View view) {
         startActivity(new Intent(this, StreamActivity.class));
+    }
+
+    /**
+     * java相关
+     *
+     * @param view
+     */
+    public void jumpJava(View view) {
+        startActivity(new Intent(this, JavaActivity.class));
     }
 }

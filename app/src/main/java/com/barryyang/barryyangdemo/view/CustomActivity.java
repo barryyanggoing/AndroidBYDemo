@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo.activity;
+package com.barryyang.barryyangdemo.view;
 
 import android.os.Bundle;
 

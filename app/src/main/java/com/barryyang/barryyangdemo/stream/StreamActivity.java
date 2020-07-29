@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo.activity;
+package com.barryyang.barryyangdemo.stream;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
