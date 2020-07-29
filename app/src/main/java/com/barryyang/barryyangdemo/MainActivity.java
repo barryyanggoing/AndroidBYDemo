@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.view.CustomActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
@@ -114,5 +115,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpJava(View view) {
         startActivity(new Intent(this, JavaActivity.class));
+    }
+
+    /**
+     * handler
+     *
+     * @param view
+     */
+    public void jumpHandler(View view) {
+        startActivity(new Intent(this, HandlerActivity.class));
     }
 }
