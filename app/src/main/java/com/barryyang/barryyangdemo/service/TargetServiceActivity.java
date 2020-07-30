@@ -60,7 +60,7 @@ public class TargetServiceActivity extends AppCompatActivity {
     }
 
     public void startIntentService(View view) {
-        Intent intent = new Intent(this, MyIntentService.class);
+        Intent intent = new Intent(this, CustomIntentService.class);
         Bundle bundle = new Bundle();
         bundle.putString("key", "当前值：" + i++);
         intent.putExtras(bundle);

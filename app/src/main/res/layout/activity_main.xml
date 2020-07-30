@@ -122,6 +122,21 @@
             android:onClick="jumpHandler"
             android:text="Handler测试DEMO" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Thread"
+            android:textColor="#fff"
+            android:textSize="@dimen/dimen_18" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpThread"
+            android:text="Thread测试DEMO" />
+
     </LinearLayout>
 
 </ScrollView>

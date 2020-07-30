@@ -57,6 +57,7 @@
         <activity android:name=".stream.StreamActivity" />
         <activity android:name=".java.JavaActivity" />
         <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".activity.ThreadActivity" />
 
         <service
             android:name=".service.LocalService"
@@ -66,7 +67,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-        <service android:name=".service.MyIntentService" />
+        <service android:name=".service.CustomIntentService" />
     </application>
 
 </manifest>

@@ -125,4 +125,13 @@ public class MainActivity extends AppCompatActivity {
     public void jumpHandler(View view) {
         startActivity(new Intent(this, HandlerActivity.class));
     }
+
+    /**
+     * Thread
+     *
+     * @param view
+     */
+    public void jumpThread(View view) {
+        startActivity(new Intent(this, ThreadActivity.class));
+    }
 }
