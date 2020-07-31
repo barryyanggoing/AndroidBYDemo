@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.R;
+import com.barryyang.barryyangdemo.components.ComponentsActivity;
 import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
@@ -150,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * RxJava
+     *
      * @param view
      */
     public void jumpRxJava(View view) {
@@ -158,9 +160,19 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Glide
+     *
      * @param view
      */
     public void jumpGlide(View view) {
         startActivity(new Intent(this, GlideActivity.class));
+    }
+
+    /**
+     * Components
+     *
+     * @param view
+     */
+    public void jumpComponents(View view) {
+        startActivity(new Intent(this, ComponentsActivity.class));
     }
 }
