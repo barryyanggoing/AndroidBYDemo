@@ -17,6 +17,8 @@ import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
 import com.barryyang.barryyangdemo.service.TargetServiceActivity;
 
+import rxjava.RxJavaActivity;
+
 /**
  * 测试各种
  *
@@ -143,5 +145,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpHttp(View view) {
         startActivity(new Intent(this, HttpActivity.class));
+    }
+
+    /**
+     * RxJava
+     * @param view
+     */
+    public void jumpRxJava(View view) {
+        startActivity(new Intent(this, RxJavaActivity.class));
     }
 }
