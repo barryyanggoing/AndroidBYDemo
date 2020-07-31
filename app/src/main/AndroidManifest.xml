@@ -60,6 +60,7 @@
         <activity android:name=".activity.ThreadActivity" />
         <activity android:name=".http.HttpActivity" />
         <activity android:name="rxjava.RxJavaActivity" />
+        <activity android:name=".glide.GlideActivity" />
 
         <service
             android:name=".service.LocalService"
