@@ -13,6 +13,7 @@ import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
+import com.barryyang.barryyangdemo.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.view.CustomActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
@@ -174,5 +175,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpComponents(View view) {
         startActivity(new Intent(this, ComponentsActivity.class));
+    }
+
+    /**
+     * Android Q适配
+     *
+     * @param view
+     */
+    public void jumpStorage(View view) {
+        startActivity(new Intent(this, ScopedStorageActivity.class));
     }
 }

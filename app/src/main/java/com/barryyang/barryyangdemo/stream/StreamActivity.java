@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.barryyang.barryyangdemo.R;
+import com.barryyang.barryyangdemo.utils.Cfg;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
 import java.io.File;
@@ -34,12 +35,6 @@ public class StreamActivity extends AppCompatActivity {
 
     private boolean hasPermission = false;
 
-    private static final String ROOT_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/barryyangdemo/stream/";
-    private static final String FILE_NAME = "stream.txt";
-    private static final String RANDOM_FILE_NAME = "random.txt";
-    private static final String RANDOM_PATH = ROOT_PATH + RANDOM_FILE_NAME;
-    private static final String STREAM_PATH = ROOT_PATH + FILE_NAME;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,8 +44,8 @@ public class StreamActivity extends AppCompatActivity {
         int hasWritePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (hasReadPermission == PackageManager.PERMISSION_GRANTED && hasWritePermission == PackageManager.PERMISSION_GRANTED) {
             hasPermission = true;
-            createFile(ROOT_PATH, FILE_NAME);
-            createFile(ROOT_PATH, RANDOM_FILE_NAME);
+            createFile(Cfg.ROOT_PATH, Cfg.FILE_NAME);
+            createFile(Cfg.ROOT_PATH, Cfg.RANDOM_FILE_NAME);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1001);
         }
@@ -83,7 +78,7 @@ public class StreamActivity extends AppCompatActivity {
         if (requestCode == 1001) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 hasPermission = true;
-                createFile(ROOT_PATH, FILE_NAME);
+                createFile(Cfg.ROOT_PATH, Cfg.FILE_NAME);
             } else {
                 hasPermission = false;
             }
@@ -101,7 +96,7 @@ public class StreamActivity extends AppCompatActivity {
         if (hasPermission) {
             FileOutputStream fileOutputStream = null;
             try {
-                fileOutputStream = new FileOutputStream(STREAM_PATH, true);
+                fileOutputStream = new FileOutputStream(Cfg.STREAM_PATH, true);
                 fileOutputStream.write("BarryYang输入输出流测试DEMO\n".getBytes());
                 //刷新输出流
                 fileOutputStream.flush();
@@ -131,7 +126,7 @@ public class StreamActivity extends AppCompatActivity {
         if (hasPermission) {
             FileInputStream fileInputStream = null;
             try {
-                fileInputStream = new FileInputStream(STREAM_PATH);
+                fileInputStream = new FileInputStream(Cfg.STREAM_PATH);
                 int len;
                 //先把字节存入到缓冲数组中，一下读取整个数组的数据
                 byte[] buf = new byte[1024 * 4];
@@ -165,7 +160,7 @@ public class StreamActivity extends AppCompatActivity {
         if (hasPermission) {
             RandomAccessFile randomAccessFile = null;
             try {
-                randomAccessFile = new RandomAccessFile(RANDOM_PATH, "rw");
+                randomAccessFile = new RandomAccessFile(Cfg.RANDOM_PATH, "rw");
                 int counter = randomAccessFile.readInt();
                 String content = randomAccessFile.readUTF();
                 LogUtil.printLogDebug(TAG, counter + "-->" + content);
@@ -194,7 +189,7 @@ public class StreamActivity extends AppCompatActivity {
         if (hasPermission) {
             RandomAccessFile randomAccessFile = null;
             try {
-                randomAccessFile = new RandomAccessFile(RANDOM_PATH, "rw");
+                randomAccessFile = new RandomAccessFile(Cfg.RANDOM_PATH, "rw");
                 randomAccessFile.writeInt(0);
                 randomAccessFile.writeUTF("BarryYang随机访问文件测试DEMO");
             } catch (Exception e) {
