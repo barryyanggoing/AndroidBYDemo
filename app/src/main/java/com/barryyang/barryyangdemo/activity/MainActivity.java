@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.handler.HandlerActivity;
+import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.view.CustomActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
@@ -133,5 +134,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpThread(View view) {
         startActivity(new Intent(this, ThreadActivity.class));
+    }
+
+    /**
+     * http
+     *
+     * @param view
+     */
+    public void jumpHttp(View view) {
+        startActivity(new Intent(this, HttpActivity.class));
     }
 }
