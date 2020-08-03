@@ -1,11 +1,20 @@
 package com.barryyang.barryyangdemo.scopedstorage;
 
 import android.Manifest;
+import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.ParcelFileDescriptor;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -97,6 +106,39 @@ public class ScopedStorageActivity extends AppCompatActivity {
      * Android Q下创建文件夹，创建的路径不一样
      */
     private void createRootFileQ() {
+        File externalFilesDir = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        File externalFilesDir1 = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+        String rootPath = Cfg.ROOT_PATH;
+        LogUtil.printLogDebug(TAG, rootPath + "--->" + externalFilesDir.getPath() + "---"+externalFilesDir1.getPath());
+    }
 
+    /**
+     * 从相册获取图片
+     *
+     * @param view
+     */
+    public void getPicOnAndroid(View view) {
+        ImageView imageView = findViewById(R.id.iv_image);
+        ContentResolver contentResolver = getContentResolver();
+        Cursor cursor = contentResolver.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, null, null, null);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns._ID));
+                Uri uri = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, id);
+//                Glide.with(this).load(uri).into(imageView);
+                try {
+                    ParcelFileDescriptor parcelFileDescriptor = contentResolver.openFileDescriptor(uri, "r");
+                    if (parcelFileDescriptor != null) {
+                        Bitmap bitmap = BitmapFactory.decodeFileDescriptor(parcelFileDescriptor.getFileDescriptor());
+                        parcelFileDescriptor.close();
+                        imageView.setImageBitmap(bitmap);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            cursor.close();
+        }
     }
 }
