@@ -13,6 +13,7 @@ import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
+import com.barryyang.barryyangdemo.kotlin.KotlinActivity;
 import com.barryyang.barryyangdemo.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.view.CustomActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
@@ -20,7 +21,7 @@ import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
 import com.barryyang.barryyangdemo.service.TargetServiceActivity;
 
-import rxjava.RxJavaActivity;
+import com.barryyang.barryyangdemo.rxjava.RxJavaActivity;
 
 /**
  * 测试各种
@@ -184,5 +185,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpStorage(View view) {
         startActivity(new Intent(this, ScopedStorageActivity.class));
+    }
+
+    /**
+     * kotlin
+     * @param view
+     */
+    public void jumpKotlin(View view) {
+        startActivity(new Intent(this, KotlinActivity.class));
     }
 }

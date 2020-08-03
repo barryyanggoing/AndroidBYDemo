@@ -1,4 +1,4 @@
-package rxjava;
+package com.barryyang.barryyangdemo.rxjava;
 
 import android.os.Bundle;
 

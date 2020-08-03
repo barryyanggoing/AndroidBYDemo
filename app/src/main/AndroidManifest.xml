@@ -59,10 +59,11 @@
         <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".activity.ThreadActivity" />
         <activity android:name=".http.HttpActivity" />
-        <activity android:name="rxjava.RxJavaActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.rxjava.RxJavaActivity" />
         <activity android:name=".glide.GlideActivity" />
         <activity android:name=".components.ComponentsActivity" />
         <activity android:name=".scopedstorage.ScopedStorageActivity" />
+        <activity android:name=".kotlin.KotlinActivity" />
 
         <service
             android:name=".service.LocalService"

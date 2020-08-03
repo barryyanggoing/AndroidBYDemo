@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @author : BarryYang
  * @date : 2020/7/30 2:53 PM
- * @desc :okhttp+retrofit+rxjava
+ * @desc :okhttp+retrofit+com.barryyang.barryyangdemo.rxjava
  */
 public class HttpActivity extends AppCompatActivity {
 
