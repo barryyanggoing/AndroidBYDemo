@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo.activity;
+package com.barryyang.barryyangdemo.crash;
 
 import android.os.Bundle;
 
@@ -9,14 +9,14 @@ import com.barryyang.barryyangdemo.R;
 
 /**
  * @author : BarryYang
- * @date : 2020/7/24 10:49 AM
+ * @date : 2020/8/5 2:38 PM
  * @desc :
  */
-public class IntentFilterActivity extends AppCompatActivity {
+public class ReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intentfilter);
+        setContentView(R.layout.activity_report);
     }
 }
