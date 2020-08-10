@@ -16,6 +16,7 @@ import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.kotlin.KotlinActivity;
 import com.barryyang.barryyangdemo.scopedstorage.ScopedStorageActivity;
+import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.view.CustomActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LogUtil.printLogDebug(TAG,"onCreate");
     }
 
     /**

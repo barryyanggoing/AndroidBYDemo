@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.barryyang.barryyangdemo.crash.CrashHandler;
 import com.barryyang.barryyangdemo.utils.LogUtil;
+import com.barryyang.barryyangdemo.utils.PreferenceUtil;
 
 /**
  * @author : BarryYang
@@ -35,6 +36,8 @@ public class MainApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         LogUtil.printLogDebug(TAG, "attachBaseContext()");
+        int integerByKey = PreferenceUtil.getInstance(this).getIntegerByKey(PreferenceUtil.PrefKey.PREF_KEY_CRASH_COUNT, 0);
+        LogUtil.printLogDebug(TAG, String.valueOf(integerByKey));
     }
 
 }
