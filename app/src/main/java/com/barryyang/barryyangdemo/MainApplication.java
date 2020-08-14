@@ -21,15 +21,15 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         LogUtil.printLogDebug(TAG, "onCreate()");
-        CrashHandler.init(new CrashHandler.CrashHandlerListener() {
-            @Override
-            public void uncaughtException(Thread t, Throwable e) {
-                LogUtil.printLogDebug(TAG, "当前线程=" + t.getName() + ",异常信息" + e.getMessage());
-                Intent intent = new Intent("com.barryyang.barryyangdemo.report");
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
+//        CrashHandler.init(new CrashHandler.CrashHandlerListener() {
+//            @Override
+//            public void uncaughtException(Thread t, Throwable e) {
+//                LogUtil.printLogDebug(TAG, "当前线程=" + t.getName() + ",异常信息" + e.getMessage());
+//                Intent intent = new Intent("com.barryyang.barryyangdemo.report");
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override

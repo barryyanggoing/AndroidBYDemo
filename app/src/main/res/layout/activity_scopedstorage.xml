@@ -9,19 +9,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="createFile"
-        android:text="创建文件夹(Android Q和Q以下版本)"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="创建文件夹" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="getPicOnAndroid"
-        android:text="Android获取相册图片" />
+        android:onClick="getImei"
+        android:text="获取设备IMEI信息"/>
 
-    <ImageView
-        android:id="@+id/iv_image"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="getMac"
+        android:text="获取设备mac信息" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getAndroidId"
+        android:text="获取设备AndroidId信息" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getIMSI"
+        android:text="获取设备IMSI信息" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getSerialNo"
+        android:text="获取设备SerialNo信息" />
 
 </LinearLayout>

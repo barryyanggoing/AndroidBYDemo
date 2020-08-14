@@ -1,0 +1,40 @@
+
+M
+java:S1172K"+Remove this unused method parameter "view".(Ø“¹ïşÿÿÿÿ8º¥·½.
+H
+java:S11728"+Remove this unused method parameter "view".(’½’ú8§Š€´½.
+V	java:S110""<This class has 9 parents which is greater than 5 authorized.(ğ‹Ùõıÿÿÿÿ
+n	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÿ«ğ8¬òÇ·½.
+I
+java:S1172Å"+Remove this unused method parameter "view".( ”Ô¸8†Ü”¸½.
+_
+java:S1075†"ARefactor your code to get this URI from a customizable parameter.(”»ªñ8¸Ùé·½.
+Q
+java:S1874å".Remove this use of "SERIAL"; it is deprecated.(¤İ¨±üÿÿÿÿ8††¾¸½.
+n	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÿ«ğ8¸Ùé·½.
+J
+java:S1185/"(Remove this method to simply inherit it.(Ó»×¶şÿÿÿÿ8±ÍĞ¶½.
+M
+java:S2093…"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8¸Ùé·½.
+N
+java:S1172Ï"+Remove this unused method parameter "view".(şü²‰ûÿÿÿÿ8’¼¤¸½.
+P
+java:S1874S"3Remove this use of "getDeviceId"; it is deprecated.(¿‚¦é8º¥·½.
+M
+java:S1172i"+Remove this unused method parameter "view".(†¨Ù½ùÿÿÿÿ8ıí¨·½.
+z
+java:S3252è"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(ñò´ÿÿÿÿÿ8††¾¸½.
+P
+java:S1874N"3Remove this use of "getDeviceId"; it is deprecated.(¿‚¦é8º¥·½.
+N
+java:S1172ã"+Remove this unused method parameter "view".(ôş¾Ñúÿÿÿÿ8††¾¸½.
+‚
+java:S1149®"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ8¬òÇ·½.
+y
+java:S3252R"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(ñò´ÿÿÿÿÿ8º¥·½.
+p
+java:S3776£"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ˆ‰Ï¶8¬òÇ·½.
+y
+java:S3252X"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(ñò´ÿÿÿÿÿ8º¥·½.
+t
+java:S3252Õ"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(ä«ª@8¥±¸½.

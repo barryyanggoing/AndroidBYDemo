@@ -1,0 +1,27 @@
+
+G
+java:S1481B",Remove this unused "newFile" local variable.(øÚßúÿÿÿÿ
+E
+java:S2093a"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+F
+java:S2093¡"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+F
+java:S1172|"+Remove this unused method parameter "view".(ğÛÖ´üÿÿÿÿ
+F
+java:S1172^"+Remove this unused method parameter "view".(‘÷Á¿øÿÿÿÿ
+F
+java:S2093¾"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+V	java:S110 "<This class has 9 parents which is greater than 5 authorized.(–¥…Ñøÿÿÿÿ
+H
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
+\	java:S899B"BDo something with the "boolean" value returned by "createNewFile".(øÚßúÿÿÿÿ
+B
+java:S1172"+Remove this unused method parameter "view".(òÓ¹í
+V
+java:S1854B";Remove this useless assignment to local variable "newFile".(øÚßúÿÿÿÿ
+N
+java:S1128"3Remove this unused import 'android.os.Environment'.(É¿‹Ãûÿÿÿÿ
+G
+java:S1172»"+Remove this unused method parameter "view".(¶½ŒÜÿÿÿÿÿ
