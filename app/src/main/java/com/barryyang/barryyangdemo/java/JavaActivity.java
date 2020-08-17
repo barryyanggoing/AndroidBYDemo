@@ -23,7 +23,6 @@ public class JavaActivity extends AppCompatActivity {
     /**
      * 1.==比较的是内存地址，student1和student2是两个不同的对象，因此内存地址也是不相同的。
      * 2.equal方法来自object类，但是student并没有重写equal,因此调用的还是object得equal,object的equal方法使用的是==运算符，因此返回的还是false
-     *
      */
 
     @Override
@@ -35,9 +34,13 @@ public class JavaActivity extends AppCompatActivity {
         youthPersonDemo();
     }
 
+    private void demo(Source<String> stringSource) {
+       // Source<Object> objectSource = stringSource;
+    }
+
     private void youthPersonDemo() {
         Person person1 = new Person(1, "小名");
-        YouthPerson youthPerson = new YouthPerson(1, "小名",1);
+        YouthPerson youthPerson = new YouthPerson(1, "小名", 1);
         LogUtil.printLogDebug(TAG, "person1==youthPerson:" + (person1 == youthPerson));
         //YouthPerson是Person的子类 object instanceof Person为true，且userId，username都相同，固为true
         LogUtil.printLogDebug(TAG, "person1.equal(youthPerson):" + (person1.equals(youthPerson)));

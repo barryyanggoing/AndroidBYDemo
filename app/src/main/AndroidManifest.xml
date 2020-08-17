@@ -73,6 +73,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".kotlin.OpenKotlinActivity" />
 
         <service
             android:name=".service.LocalService"
