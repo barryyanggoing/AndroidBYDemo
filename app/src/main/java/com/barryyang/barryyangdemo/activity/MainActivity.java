@@ -17,7 +17,7 @@ import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.kotlin.KotlinActivity;
 import com.barryyang.barryyangdemo.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.utils.LogUtil;
-import com.barryyang.barryyangdemo.view.CustomActivity;
+import com.barryyang.barryyangdemo.view.ViewActivity;
 import com.barryyang.barryyangdemo.stream.StreamActivity;
 import com.barryyang.barryyangdemo.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.bitmap.LruCacheActivity;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void jumpCustomView(View view) {
-        startActivity(new Intent(this, CustomActivity.class));
+        startActivity(new Intent(this, ViewActivity.class));
     }
 
     /**

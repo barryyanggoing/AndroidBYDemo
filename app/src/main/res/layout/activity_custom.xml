@@ -8,6 +8,7 @@
         android:id="@+id/custom_view"
         android:layout_width="@dimen/dimen_150"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -17,6 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_30"
         android:background="@color/colorPrimary"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/custom_view">
 
@@ -41,7 +43,90 @@
     <com.barryyang.barryyangdemo.view.ClockView
         android:layout_width="@dimen/dimen_200"
         android:layout_height="@dimen/dimen_200"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/custom_group_view" />
+
+    <LinearLayout
+        android:id="@+id/parent_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_100"
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.barryyang.barryyangdemo.view.MotionView
+            android:id="@+id/motion_view"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+
+    <com.barryyang.barryyangdemo.view.DispatchViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:visibility="gone">
+
+        <com.barryyang.barryyangdemo.view.DispatchView
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
+            android:background="@color/colorAccent" />
+
+    </com.barryyang.barryyangdemo.view.DispatchViewGroup>
+
+    <com.barryyang.barryyangdemo.view.HorizontalScrollViewEx
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200"
+        android:background="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="#f908"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="@color/colorPrimary"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="@color/recovery_colorPrimaryDark"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="#908"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="#978"/>-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="@dimen/dimen_100"-->
+        <!--            android:layout_height="@dimen/dimen_100"-->
+        <!--            android:background="#508"/>-->
+
+    </com.barryyang.barryyangdemo.view.HorizontalScrollViewEx>
+
+    <Button
+        android:id="@+id/btn_anim"
+        android:layout_width="@dimen/dimen_100"
+        android:layout_height="wrap_content"
+        android:text="button"
+        android:onClick="performAnimation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
