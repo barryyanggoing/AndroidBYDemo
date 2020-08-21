@@ -1,9 +1,11 @@
 package com.barryyang.barryyangdemo.kotlin.test
 
+import com.barryyang.barryyangdemo.kotlin.banshengobject.BsObject
 import com.barryyang.barryyangdemo.kotlin.generic.Apple
 import com.barryyang.barryyangdemo.kotlin.generic.Banana
 import com.barryyang.barryyangdemo.kotlin.generic.FruitPlate
 import com.barryyang.barryyangdemo.kotlin.generic.SmartList
+import com.barryyang.barryyangdemo.kotlin.kuozhan.Example
 import com.barryyang.barryyangdemo.kotlin.lambda.Student
 import com.google.gson.Gson
 import java.io.File
@@ -15,20 +17,54 @@ import java.lang.NullPointerException
  * @desc :kotlin demo 测试
  */
 
+/**
+ * "?"加在变量名后，系统在任何情况不会报它的空指针异常。
+ * "!!"加在变量名后，如果对象为null，那么系统一定会报异常！
+ * ::双冒号操作符 表示把一个方法当做一个参数，传递到另一个方法中进行使用，通俗的来讲就是引用一个方法
+ */
+
+const val SUBSYSTEM_DEPRECATED: String = "这个方法过时了"
+
 fun main() {
 //    testSmartList()
 //    testFruit()
 //    printDefault()
 //    lambdaTest()
 //    test1()
-//    val map = mapOf("a" to 1, "b" to 2, "c" to 3)
-//    for ((k, v) in map) {
-//        println("key和value的值：${k},${v}")
-//    }
 //    applyTest()
-    // alsoTest()
+//     alsoTest()
 //    breakTest()
-    returnTest()
+//    returnTest()
+//    testinit()
+//    fooss()
+//    testkuozhan()
+    testbansheng()
+}
+
+/**
+ * 伴生对象创建扩展函数方法
+ */
+fun testbansheng() {
+    BsObject.Companion.test()
+}
+
+/**
+ * 扩展函数方法
+ */
+fun testkuozhan() {
+//    val lists = mutableListOf(1, 2, 3)
+//    lists.swap(0, 2)
+//    println(lists)
+    Example().printFunctionType()
+}
+
+@Deprecated(SUBSYSTEM_DEPRECATED)
+fun fooss() {
+
+}
+
+fun testinit() {
+    val student = Student("BarryYang", 30, "m", 100)
 }
 
 fun lambdaTest() {
@@ -107,7 +143,7 @@ fun groupBySex(students: List<Student>): Map<String, List<Student>> {
 fun isOdd(x: Int) = x % 2 != 0
 
 /**
- * 集合filter
+ * 集合filter，Kotlin 中 双冒号操作符 表示把一个方法当做一个参数，传递到另一个方法中进行使用，通俗的来讲就是引用一个方法
  */
 private fun test1() {
     val listOf = listOf(1, 2, 3)
@@ -173,7 +209,7 @@ fun withTest() {
 }
 
 /**
- * let和with的结合
+ * let和with的结合 run函数是以闭包形式返回最后一行代码的值
  */
 fun runTest() {
     val student = Student("BarryYang", 30, "m", 100)
@@ -223,4 +259,38 @@ fun returnTest() {
         if (it == 3) return@forEach
     }
     println("return end")
+}
+
+/**
+ * Kotlin 能够扩展⼀个类的新功能⽽⽆需继承该类或者使⽤像装饰者这样的设计模式。这通过叫做 扩展 的特殊声明完成。
+ * 例如，你可以为⼀个你不能修改的、来⾃第三⽅库中的类编写⼀个新的函数。这个新增的函数就像那个原始类本来就有的函数⼀样，可以⽤普通的⽅法调⽤。这种机制称为 扩展函数 。
+ * 此外，也有 扩展属性 ，允许你为⼀个已经存在的类添加新的属性。
+ */
+fun <T> MutableList<T>.swap(index1: Int, index2: Int) {
+    val temp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = temp
+}
+
+/**
+ * 如果⼀个类定义有⼀个成员函数与⼀个扩展函数，⽽这两个函数⼜有相同的接收者类型、相同的名字，并且都适⽤给 定的参数，这种情况总是取成员函数。
+ */
+fun Example.printFunctionType(i: Int) {
+    println("kuozhan")
+}
+
+fun Any?.toString(): String {
+    if (this == null) return "null"
+    return toString()
+}
+
+/**
+ * 扩展属性 注意：由于扩展没有实际的将成员插⼊类中，因此对扩展属性来说幕后字段是⽆效的。
+ * 这就是为什么扩展属性不能有初 始化器。他们的⾏为只能由显式提供的 getters/setters 定义。
+ */
+val <T> List<T>.lastIndex: Int get() = this.size - 1
+//val <T> List<T>.lastIndex: Int = 10
+
+fun BsObject.Companion.test() {
+    println("bansheng")
 }

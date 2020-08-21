@@ -16,7 +16,7 @@ import java.util.*
  */
 class CustomAdapter : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    private val TAG = "CustomAdapter"
+    private val TAG: String = "CustomAdapter"
 
     private var list = ArrayList<String>()
 
