@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo.designmodel.factory;
+package com.barryyang.barryyangdemo.designmodel.factory.method_factory;
 
 /**
  * @author barryyang

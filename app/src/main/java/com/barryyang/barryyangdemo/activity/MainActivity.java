@@ -10,6 +10,7 @@ import android.view.View;
 import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.components.ComponentsActivity;
 import com.barryyang.barryyangdemo.crash.CrashActivity;
+import com.barryyang.barryyangdemo.designmodel.DesignModelActivity;
 import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
@@ -206,5 +207,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpCrash(View view) {
         startActivity(new Intent(this, CrashActivity.class));
+    }
+
+    /**
+     * 设计模式
+     * @param view
+     */
+    public void jumpDesignModel(View view) {
+        startActivity(new Intent(this, DesignModelActivity.class));
     }
 }
