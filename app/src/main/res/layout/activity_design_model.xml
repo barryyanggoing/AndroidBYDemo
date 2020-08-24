@@ -21,4 +21,11 @@
         android:layout_height="wrap_content"
         android:onClick="abstractFactoryModel"
         android:text="抽象工厂方法模式" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="modelMethodModel"
+        android:text="模板方法模式" />
+
 </LinearLayout>

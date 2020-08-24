@@ -8,12 +8,13 @@ import com.barryyang.barryyangdemo.designmodel.factory.abstract_factory.MaleFact
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.AbstractHumanFactory
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.HumanFactory
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.YellowHuman
+import com.barryyang.barryyangdemo.designmodel.model.Car1
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
 
 /**
  * @author : BarryYang
  * @date : 2020/8/22 4:16 PM
- * @desc :
+ * @desc :设计模式
  */
 class DesignModelActivity : AppCompatActivity() {
 
@@ -43,6 +44,14 @@ class DesignModelActivity : AppCompatActivity() {
     fun abstractFactoryModel(view: View) {
         val createWhiteHuman = MaleFactory().createWhiteHuman()
         createWhiteHuman.getSex()
+    }
+
+    /**
+     * 模板方法模式
+     */
+    fun modelMethodModel(view: View) {
+        val car = Car1()
+        car.run()
     }
 
 }
