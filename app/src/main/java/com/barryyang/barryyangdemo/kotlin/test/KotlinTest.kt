@@ -63,9 +63,7 @@ fun fooss() {
 
 }
 
-fun testinit() {
-    val student = Student("BarryYang", 30, "m", 100)
-}
+
 
 fun lambdaTest() {
     // val sum: Int.(Int) -> Int = { other -> plus(other) }
