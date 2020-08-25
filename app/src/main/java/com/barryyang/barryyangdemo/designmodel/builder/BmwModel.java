@@ -3,11 +3,11 @@ package com.barryyang.barryyangdemo.designmodel.builder;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
 /**
- * 奔驰
+ * 宝马
  */
-public class BenzModel extends AbstractCarModel {
+public class BmwModel extends AbstractCarModel {
 
-    private static final String TAG = "BenzModel";
+    private static final String TAG = "BmwModel";
 
     @Override
     protected void start() {

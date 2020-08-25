@@ -28,4 +28,16 @@
         android:onClick="modelMethodModel"
         android:text="模板方法模式" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="builderModel"
+        android:text="建造者模式" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="proxyModel"
+        android:text="代理模式" />
+
 </LinearLayout>

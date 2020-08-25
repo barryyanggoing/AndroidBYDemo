@@ -5,13 +5,21 @@ import java.lang.reflect.Method;
 
 public class GamePlayIH implements InvocationHandler {
 
-    //被代理者
+    /**
+     * 被代理者
+     */
     Class aClass;
 
-    //被代理的实例
+    /**
+     * 被代理的实例
+     */
     Object object;
 
-    //我要代理谁
+    /**
+     * 我要代理谁
+     *
+     * @param o
+     */
     public GamePlayIH(Object o) {
         this.object = o;
     }

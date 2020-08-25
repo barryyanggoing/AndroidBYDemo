@@ -33,7 +33,15 @@ public abstract class AbstractCarModel {
 
     final public void run() {
         for (String s : sequence) {
-
+            if (s.equals("start")) {
+                this.start();
+            } else if (s.equals("stop")) {
+                this.stop();
+            } else if (s.equals("alarm")) {
+                this.alarm();
+            } else if (s.equals("engineBoom")) {
+                this.engineBoom();
+            }
         }
     }
 

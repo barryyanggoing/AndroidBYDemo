@@ -1,8 +1,11 @@
 package com.barryyang.barryyangdemo.designmodel.proxy;
 
+/**
+ * @author barryyang
+ */
 public class GamePlayerProxyImpl implements IGamePlayer {
 
-    IGamePlayer gamePlayer;
+    private IGamePlayer gamePlayer;
 
     public GamePlayerProxyImpl(String name) {
         if (this.gamePlayer == null) {

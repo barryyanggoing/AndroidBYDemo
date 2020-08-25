@@ -1,5 +1,8 @@
 package com.barryyang.barryyangdemo.designmodel.proxy;
 
+/**
+ * @author barryyang
+ */
 public class GamePlayerImpl implements IGamePlayer {
 
     private String name;

@@ -2,9 +2,6 @@ package com.barryyang.barryyangdemo;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
-
-import com.barryyang.barryyangdemo.crash.CrashHandler;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.utils.PreferenceUtil;
 
