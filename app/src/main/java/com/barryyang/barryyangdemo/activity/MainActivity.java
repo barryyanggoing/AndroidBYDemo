@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.components.ComponentsActivity;
+import com.barryyang.barryyangdemo.constraint.ConstraintActivity;
 import com.barryyang.barryyangdemo.crash.CrashActivity;
 import com.barryyang.barryyangdemo.designmodel.DesignModelActivity;
 import com.barryyang.barryyangdemo.glide.GlideActivity;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LogUtil.printLogDebug(TAG,"onCreate");
+        LogUtil.printLogDebug(TAG, "onCreate");
     }
 
     /**
@@ -211,9 +212,19 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 设计模式
+     *
      * @param view
      */
     public void jumpDesignModel(View view) {
         startActivity(new Intent(this, DesignModelActivity.class));
+    }
+
+    /**
+     * ConstraintLayout
+     *
+     * @param view
+     */
+    public void jumpConstraintLayout(View view) {
+        startActivity(new Intent(this, ConstraintActivity.class));
     }
 }

@@ -75,6 +75,7 @@
         </activity>
         <activity android:name=".kotlin.OpenKotlinActivity" />
         <activity android:name=".designmodel.DesignModelActivity" />
+        <activity android:name=".constraint.ConstraintActivity" />
 
         <service
             android:name=".service.LocalService"

@@ -13,6 +13,9 @@ import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayIH
 import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayerImpl
 import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
+import com.barryyang.barryyangdemo.designmodel.yuanxing.AdvTemplate
+import com.barryyang.barryyangdemo.designmodel.yuanxing.Mail
+import com.barryyang.barryyangdemo.utils.LogUtil
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Proxy
 
@@ -22,6 +25,11 @@ import java.lang.reflect.Proxy
  * @desc :设计模式
  */
 class DesignModelActivity : AppCompatActivity() {
+
+    companion object {
+        private const val MAX_COUNT = 6
+        private const val TAG = "DesignModelActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +106,22 @@ class DesignModelActivity : AppCompatActivity() {
         gamePlayer.login("zhangsan", "123456")
         gamePlayer.killBoss()
         gamePlayer.upgrade()
+    }
+
+    /**
+     * 原型模式:这种不通过new关键字来产生一个对象，而是通过对象复制来实现的模式就叫做原型模式。
+     */
+    fun yuanxingModel(view: View) {
+        var i = 0
+        val mail = Mail(AdvTemplate())
+        mail.tail = "版权归我所有。。。。"
+        while (i < MAX_COUNT) {
+            val copyMail = mail.clone()
+            copyMail.receiver = "614994859@qq.com"
+            copyMail.appellation = "ssss"
+            LogUtil.printLogDebug(TAG, "${copyMail.receiver}，${copyMail.tail},发送成功")
+            i++
+        }
     }
 
 }

@@ -40,4 +40,10 @@
         android:onClick="proxyModel"
         android:text="代理模式" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="yuanxingModel"
+        android:text="原型模式" />
+
 </LinearLayout>
