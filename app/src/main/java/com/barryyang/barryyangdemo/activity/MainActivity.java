@@ -17,6 +17,7 @@ import com.barryyang.barryyangdemo.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.kotlin.KotlinActivity;
+import com.barryyang.barryyangdemo.motionlayout.MotionLayoutActivity;
 import com.barryyang.barryyangdemo.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.view.ViewActivity;
@@ -226,5 +227,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpConstraintLayout(View view) {
         startActivity(new Intent(this, ConstraintActivity.class));
+    }
+
+    /**
+     * MotionLayout
+     *
+     * @param view
+     */
+    public void jumpMotionLayout(View view) {
+        startActivity(new Intent(this, MotionLayoutActivity.class));
     }
 }
