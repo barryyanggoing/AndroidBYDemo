@@ -46,4 +46,16 @@
         android:onClick="yuanxingModel"
         android:text="原型模式" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="zhongjieModel"
+        android:text="中介者模式" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="commandModel"
+        android:text="命令模式" />
+
 </LinearLayout>

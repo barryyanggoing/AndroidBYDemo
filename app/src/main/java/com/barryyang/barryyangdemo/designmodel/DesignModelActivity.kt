@@ -5,6 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.barryyang.barryyangdemo.R
 import com.barryyang.barryyangdemo.designmodel.builder.BenzCarBuilder
+import com.barryyang.barryyangdemo.designmodel.command.DeletePageCommand
+import com.barryyang.barryyangdemo.designmodel.command.Invoker
 import com.barryyang.barryyangdemo.designmodel.factory.abstract_factory.MaleFactory
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.HumanFactory
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.YellowHuman
@@ -15,6 +17,9 @@ import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
 import com.barryyang.barryyangdemo.designmodel.yuanxing.AdvTemplate
 import com.barryyang.barryyangdemo.designmodel.yuanxing.Mail
+import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.AbstractMediator
+import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Mediator
+import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Purchase
 import com.barryyang.barryyangdemo.utils.LogUtil
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Proxy
@@ -122,6 +127,25 @@ class DesignModelActivity : AppCompatActivity() {
             LogUtil.printLogDebug(TAG, "${copyMail.receiver}，${copyMail.tail},发送成功")
             i++
         }
+    }
+
+    /**
+     * 中介者模式
+     */
+    fun zhongjieModel(view: View) {
+        val mediator: AbstractMediator = Mediator()
+        val purchase = Purchase(mediator)
+        purchase.buyIBMCompute(100)
+    }
+
+    /**
+     * 命令模式
+     */
+    fun commandModel(view: View) {
+        val invoker = Invoker()
+        val deletePageCommand = DeletePageCommand()
+        invoker.setCommand(deletePageCommand)
+        invoker.action()
     }
 
 }
