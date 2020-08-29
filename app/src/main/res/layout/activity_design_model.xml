@@ -58,4 +58,10 @@
         android:onClick="commandModel"
         android:text="命令模式" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="zerenModel"
+        android:text="责任链模式" />
+
 </LinearLayout>

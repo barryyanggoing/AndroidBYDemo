@@ -17,6 +17,9 @@ import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
 import com.barryyang.barryyangdemo.designmodel.yuanxing.AdvTemplate
 import com.barryyang.barryyangdemo.designmodel.yuanxing.Mail
+import com.barryyang.barryyangdemo.designmodel.zerenlian.Father
+import com.barryyang.barryyangdemo.designmodel.zerenlian.Handler
+import com.barryyang.barryyangdemo.designmodel.zerenlian.Request
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.AbstractMediator
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Mediator
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Purchase
@@ -146,6 +149,14 @@ class DesignModelActivity : AppCompatActivity() {
         val deletePageCommand = DeletePageCommand()
         invoker.setCommand(deletePageCommand)
         invoker.action()
+    }
+
+    /**
+     * 责任链模式
+     */
+    fun zerenModel(view: View) {
+        val father = Father()
+        val response = father.handlerMessage(Request())
     }
 
 }
