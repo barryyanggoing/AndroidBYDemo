@@ -3,11 +3,13 @@ package com.barryyang.barryyangdemo.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.R;
+import com.barryyang.barryyangdemo.broadcast.BroadcastActivity;
 import com.barryyang.barryyangdemo.components.ComponentsActivity;
 import com.barryyang.barryyangdemo.constraint.ConstraintActivity;
 import com.barryyang.barryyangdemo.crash.CrashActivity;
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void jumpBroadcast(View view) {
-
+        startActivity(new Intent(this, BroadcastActivity.class));
     }
 
     /**
@@ -238,5 +240,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, MotionLayoutActivity.class));
     }
 
-
+    /**
+     * deeplink
+     *
+     * @param view
+     */
+    public void jumpDeepLink(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("yayagushi://com.lazyaudio.yayagushi?action=open"));
+        startActivity(intent);
+    }
 }

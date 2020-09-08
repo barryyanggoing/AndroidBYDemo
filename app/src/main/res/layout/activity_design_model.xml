@@ -64,4 +64,9 @@
         android:onClick="zerenModel"
         android:text="责任链模式" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="observerModel"
+        android:text="观察者模式" />
 </LinearLayout>

@@ -287,6 +287,20 @@
             android:onClick="jumpMotionLayout"
             android:text="MotionLayout测试DEMO" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="DeepLink"
+            android:textColor="#fff"
+            android:textSize="@dimen/dimen_18" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="jumpDeepLink"
+            android:text="DeepLink测试DEMO" />
     </LinearLayout>
 
 </ScrollView>

@@ -11,6 +11,10 @@ import com.barryyang.barryyangdemo.designmodel.factory.abstract_factory.MaleFact
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.HumanFactory
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.YellowHuman
 import com.barryyang.barryyangdemo.designmodel.model.Car1
+import com.barryyang.barryyangdemo.designmodel.observer.HanFeiZi
+import com.barryyang.barryyangdemo.designmodel.observer.IHanFeiZi
+import com.barryyang.barryyangdemo.designmodel.observer.LiSi
+import com.barryyang.barryyangdemo.designmodel.observer.Observer
 import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayIH
 import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayerImpl
 import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
@@ -157,6 +161,16 @@ class DesignModelActivity : AppCompatActivity() {
     fun zerenModel(view: View) {
         val father = Father()
         val response = father.handlerMessage(Request())
+    }
+
+    /**
+     * 观察者模式
+     */
+    fun observerModel(view: View) {
+        val observer: Observer = LiSi()
+        val hanfeizi = HanFeiZi()
+        hanfeizi.addObserver(observer)
+        hanfeizi.haveBreakfest()
     }
 
 }
