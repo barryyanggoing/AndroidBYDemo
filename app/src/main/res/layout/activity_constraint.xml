@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent">
 
-    <com.barryyang.barryyangdemo.constraint.CircularRevealHelper
+    <com.barryyang.barryyangdemo.android.constraint.CircularRevealHelper
         android:id="@+id/circularRevealHelper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.barryyang.barryyangdemo.constraint.AdHelper
+    <com.barryyang.barryyangdemo.android.constraint.AdHelper
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="iv_btn"

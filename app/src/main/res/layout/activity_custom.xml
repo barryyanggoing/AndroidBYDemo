@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.barryyang.barryyangdemo.view.CustomView
+    <com.barryyang.barryyangdemo.android.view.CustomView
         android:id="@+id/custom_view"
         android:layout_width="@dimen/dimen_150"
         android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.barryyang.barryyangdemo.view.CustomGroupView
+    <com.barryyang.barryyangdemo.android.view.CustomGroupView
         android:id="@+id/custom_group_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,9 +38,9 @@
             android:layout_height="wrap_content"
             android:text="btnaaaa" />
 
-    </com.barryyang.barryyangdemo.view.CustomGroupView>
+    </com.barryyang.barryyangdemo.android.view.CustomGroupView>
 
-    <com.barryyang.barryyangdemo.view.ClockView
+    <com.barryyang.barryyangdemo.android.view.ClockView
         android:layout_width="@dimen/dimen_200"
         android:layout_height="@dimen/dimen_200"
         android:visibility="gone"
@@ -58,7 +58,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.barryyang.barryyangdemo.view.MotionView
+        <com.barryyang.barryyangdemo.android.view.MotionView
             android:id="@+id/motion_view"
             android:layout_width="@dimen/dimen_100"
             android:layout_height="@dimen/dimen_100"
@@ -67,20 +67,20 @@
             android:background="@color/colorAccent" />
     </LinearLayout>
 
-    <com.barryyang.barryyangdemo.view.DispatchViewGroup
+    <com.barryyang.barryyangdemo.android.view.DispatchViewGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         android:visibility="gone">
 
-        <com.barryyang.barryyangdemo.view.DispatchView
+        <com.barryyang.barryyangdemo.android.view.DispatchView
             android:layout_width="@dimen/dimen_100"
             android:layout_height="@dimen/dimen_100"
             android:background="@color/colorAccent" />
 
-    </com.barryyang.barryyangdemo.view.DispatchViewGroup>
+    </com.barryyang.barryyangdemo.android.view.DispatchViewGroup>
 
-    <com.barryyang.barryyangdemo.view.HorizontalScrollViewEx
+    <com.barryyang.barryyangdemo.android.view.HorizontalScrollViewEx
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_200"
         android:background="@color/colorAccent"
@@ -118,7 +118,7 @@
         <!--            android:layout_height="@dimen/dimen_100"-->
         <!--            android:background="#508"/>-->
 
-    </com.barryyang.barryyangdemo.view.HorizontalScrollViewEx>
+    </com.barryyang.barryyangdemo.android.view.HorizontalScrollViewEx>
 
     <Button
         android:id="@+id/btn_anim"

@@ -18,7 +18,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".android.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:taskAffinity="com.barryyang.barryyangdemo.task1">
@@ -31,13 +31,13 @@
         </activity>
 
         <activity
-            android:name=".activity.TargetActivity"
+            android:name=".android.activity.TargetActivity"
             android:configChanges="orientation|screenSize" />
 
-        <activity android:name=".activity.LifecycleActivity" />
+        <activity android:name=".android.activity.LifecycleActivity" />
 
 
-        <activity android:name=".activity.IntentFilterActivity">
+        <activity android:name=".android.activity.IntentFilterActivity">
 
             <intent-filter>
                 <action android:name="com.barryyang.barryyangdemo.IntentFilter" />
@@ -49,46 +49,46 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".service.TargetServiceActivity" />
-        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".android.service.TargetServiceActivity" />
+        <activity android:name=".android.view.ViewActivity" />
         <activity
-            android:name=".bitmap.BitmapActivity"
+            android:name=".android.bitmap.BitmapActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".bitmap.LruCacheActivity" />
-        <activity android:name=".stream.StreamActivity" />
+        <activity android:name=".android.bitmap.LruCacheActivity" />
+        <activity android:name=".java.stream.StreamActivity" />
         <activity android:name=".java.JavaActivity" />
-        <activity android:name=".handler.HandlerActivity" />
-        <activity android:name=".activity.ThreadActivity" />
+        <activity android:name=".android.handler.HandlerActivity" />
+        <activity android:name=".android.activity.ThreadActivity" />
         <activity android:name=".http.HttpActivity" />
         <activity android:name="com.barryyang.barryyangdemo.rxjava.RxJavaActivity" />
         <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".components.ComponentsActivity" />
-        <activity android:name=".scopedstorage.ScopedStorageActivity" />
+        <activity android:name=".android.components.ComponentsActivity" />
+        <activity android:name=".android.scopedstorage.ScopedStorageActivity" />
         <activity android:name=".kotlin.KotlinActivity" />
-        <activity android:name=".crash.CrashActivity" />
-        <activity android:name=".crash.ReportActivity">
+        <activity android:name=".android.crash.CrashActivity" />
+        <activity android:name=".android.crash.ReportActivity">
             <intent-filter>
                 <action android:name="com.barryyang.barryyangdemo.report" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".designmodel.DesignModelActivity" />
-        <activity android:name=".constraint.ConstraintActivity" />
-        <activity android:name=".motionlayout.MotionLayoutActivity" />
-        <activity android:name=".motionlayout.BasicMotionLayoutActivity" />
-        <activity android:name=".motionlayout.ImageFilterViewActivity" />
-        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.android.constraint.ConstraintActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.android.motionlayout.BasicMotionLayoutActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.android.motionlayout.ImageFilterViewActivity" />
+        <activity android:name="com.barryyang.barryyangdemo.android.broadcast.BroadcastActivity" />
 
         <service
-            android:name=".service.LocalService"
+            android:name=".android.service.LocalService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.barryyang.barryyangdemo.local" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-        <service android:name=".service.CustomIntentService" />
+        <service android:name=".android.service.CustomIntentService" />
     </application>
 
 </manifest>

@@ -5,7 +5,10 @@ package com.barryyang.barryyangdemo.kotlin.constructor
  * @date : 2020/8/20 4:25 PM
  * @desc :
  */
-open class Ractangle {
+open class Ractangle :Shape(){
+
+    override val s: Int
+        get() = 1
 
     val borderColor: String = "black"
 
