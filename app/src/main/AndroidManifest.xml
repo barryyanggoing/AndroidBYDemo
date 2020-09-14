@@ -79,6 +79,8 @@
         <activity android:name="com.barryyang.barryyangdemo.android.motionlayout.BasicMotionLayoutActivity" />
         <activity android:name="com.barryyang.barryyangdemo.android.motionlayout.ImageFilterViewActivity" />
         <activity android:name="com.barryyang.barryyangdemo.android.broadcast.BroadcastActivity" />
+        <activity android:name=".kotlin.KotlinAdapterActivity" />
+        <activity android:name=".kotlin.KotlinCoroutineActivity" />
 
         <service
             android:name=".android.service.LocalService"
