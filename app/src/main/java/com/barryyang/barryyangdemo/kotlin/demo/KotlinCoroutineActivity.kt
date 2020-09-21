@@ -1,7 +1,8 @@
-package com.barryyang.barryyangdemo.kotlin
+package com.barryyang.barryyangdemo.kotlin.demo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.barryyang.barryyangdemo.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,12 +17,8 @@ class KotlinCoroutineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
-        startLaunch()
+        val loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        loginViewModel.login("barryyang","123456")
     }
 
-    fun startLaunch() {
-        GlobalScope.launch {
-            println(Thread.currentThread().name)
-        }
-    }
 }

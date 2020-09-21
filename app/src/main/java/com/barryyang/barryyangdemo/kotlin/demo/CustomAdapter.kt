@@ -1,4 +1,4 @@
-package com.barryyang.barryyangdemo.kotlin
+package com.barryyang.barryyangdemo.kotlin.demo
 
 import android.view.LayoutInflater
 import android.view.View

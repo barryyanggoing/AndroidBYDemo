@@ -18,7 +18,7 @@ import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.android.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.http.HttpActivity;
 import com.barryyang.barryyangdemo.java.JavaActivity;
-import com.barryyang.barryyangdemo.kotlin.KotlinActivity;
+import com.barryyang.barryyangdemo.kotlin.demo.KotlinActivity;
 import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.utils.LogUtil;
@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpDeepLink(View view) {
         try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("yayagushi://com.lazyaudio.yayagushi?action=open"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("yayagushi://com.lazyaudio.yayagushi?action=play&pt=1&id=1431"));
             startActivity(intent);
         } catch (Exception e) {
 

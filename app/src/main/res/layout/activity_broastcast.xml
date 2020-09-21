@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="staticBroadcast"
-        android:text="芽芽故事比亚迪智能语音测试"/>
+        android:text="芽芽睡前故事"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="staticBroadcast1"
+        android:text="姜小牙上学记"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="staticBroadcast2"
+        android:text="北猫"/>
 </LinearLayout>

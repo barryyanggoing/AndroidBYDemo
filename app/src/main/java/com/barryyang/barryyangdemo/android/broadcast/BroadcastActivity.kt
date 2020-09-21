@@ -25,14 +25,35 @@ class BroadcastActivity : AppCompatActivity() {
     }
 
     /**
-     * 芽芽故事比亚迪智能语音测试
+     * 芽芽睡前故事
      */
     fun staticBroadcast(view: View) {
         val intent = Intent(action)
         intent.setPackage("com.lazyaudio.yayagushi")
-        intent.putExtra(EXTRA_KEYWORDS_SEARCH, "芽芽睡前故事")
+        intent.putExtra(EXTRA_KEYWORDS_SEARCH, "芽芽睡")
         intent.putExtra(EXTRA_ARTIST_SEARCH, "歪歪兔")
         intent.putExtra(IS_BACKGROUND, false)
+        sendBroadcast(intent)
+    }
+
+    /**
+     * 姜小牙上学记
+     */
+    fun staticBroadcast1(view: View) {
+        val intent = Intent(action)
+        intent.setPackage("com.lazyaudio.yayagushi")
+        intent.putExtra(EXTRA_KEYWORDS_SEARCH, "姜小牙上学记")
+        intent.putExtra(EXTRA_ARTIST_SEARCH, "北猫")
+        intent.putExtra(IS_BACKGROUND, true)
+        sendBroadcast(intent)
+    }
+
+    fun staticBroadcast2(view: View) {
+        val intent = Intent(action)
+        intent.setPackage("com.lazyaudio.yayagushi")
+        intent.putExtra(EXTRA_KEYWORDS_SEARCH, "")
+        intent.putExtra(EXTRA_ARTIST_SEARCH, "北猫")
+        intent.putExtra(IS_BACKGROUND, true)
         sendBroadcast(intent)
     }
 }

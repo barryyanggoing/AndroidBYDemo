@@ -1,10 +1,11 @@
-package com.barryyang.barryyangdemo.kotlin
+package com.barryyang.barryyangdemo.kotlin.demo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.barryyang.barryyangdemo.R
+import com.barryyang.barryyangdemo.kotlin.demo.CustomAdapter
 import java.util.ArrayList
 
 /**
