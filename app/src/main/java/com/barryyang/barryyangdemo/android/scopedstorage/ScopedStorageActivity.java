@@ -7,6 +7,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.view.View;
@@ -39,7 +40,8 @@ public class ScopedStorageActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scopedstorage);
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 1001);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE
+        ,Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1001);
         LogUtil.printLogDebug(TAG, File.separator);
         LogUtil.printLogDebug(TAG, getFilesDir().getAbsolutePath());
         LogUtil.printLogDebug(TAG, getExternalFilesDir(null).getPath());
@@ -57,13 +59,21 @@ public class ScopedStorageActivity extends AppCompatActivity {
      * @param view
      */
     public void createFile(View view) {
-        File externalFilesDir = getExternalFilesDir(null);
-        LogUtil.printLogDebug(TAG, externalFilesDir.getAbsolutePath());
-        File file = new File(externalFilesDir.getAbsolutePath() + "/barryyangdemo");
-        if (!file.exists()) {
-            file.mkdir();
-        } else {
-            LogUtil.printLogDebug(TAG, "barryyangdemo已经存在");
+//        File externalFilesDir = getExternalFilesDir(null);
+//        LogUtil.printLogDebug(TAG, externalFilesDir.getAbsolutePath());
+//        File file = new File(externalFilesDir.getAbsolutePath() + "/barryyangdemo");
+//        if (!file.exists()) {
+//            file.mkdir();
+//        } else {
+//            LogUtil.printLogDebug(TAG, "barryyangdemo已经存在");
+//        }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            String s = Environment.getExternalStorageDirectory().getAbsolutePath() + "/barryyangdemo/";
+            File file = new File(s);
+            if (!file.exists()) {
+                boolean mkdirs = file.mkdirs();
+                LogUtil.printLogDebug("barryyang.dir", mkdirs + "");
+            }
         }
     }
 

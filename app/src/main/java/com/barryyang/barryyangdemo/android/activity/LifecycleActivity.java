@@ -104,4 +104,7 @@ public class LifecycleActivity extends AppCompatActivity {
     public void jump(View view) {
         startActivity(new Intent(this, TargetActivity.class));
     }
+
+    public void jumpYayaResourceDetail(View view) {
+    }
 }

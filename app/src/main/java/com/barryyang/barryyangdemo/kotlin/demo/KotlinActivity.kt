@@ -13,6 +13,8 @@ import com.barryyang.barryyangdemo.R
  */
 class KotlinActivity : AppCompatActivity() {
 
+    private val TAG = "KotlinActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
