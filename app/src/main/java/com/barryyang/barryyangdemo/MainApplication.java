@@ -2,6 +2,9 @@ package com.barryyang.barryyangdemo;
 
 import android.app.Application;
 import android.content.Context;
+
+import com.barryyang.barryyangdemo.android.scopedstorage.DownloadFileTransfer;
+import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageManager;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.utils.PreferenceUtil;
 
@@ -14,19 +17,19 @@ public class MainApplication extends Application {
 
     private static final String TAG = "MainApplication";
 
+    private static Application application;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        application = this;
         LogUtil.printLogDebug(TAG, "onCreate()");
-//        CrashHandler.init(new CrashHandler.CrashHandlerListener() {
-//            @Override
-//            public void uncaughtException(Thread t, Throwable e) {
-//                LogUtil.printLogDebug(TAG, "当前线程=" + t.getName() + ",异常信息" + e.getMessage());
-//                Intent intent = new Intent("com.barryyang.barryyangdemo.report");
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivity(intent);
-//            }
-//        });
+        ScopedStorageManager.getInstance().createFile();
+        DownloadFileTransfer.getInstance().transfer();
+    }
+
+    public static Application provide() {
+        return application;
     }
 
     @Override

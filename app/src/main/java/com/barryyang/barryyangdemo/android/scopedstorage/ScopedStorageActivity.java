@@ -12,18 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.barryyang.barryyangdemo.R;
-import com.barryyang.barryyangdemo.utils.Cfg;
 import com.barryyang.barryyangdemo.utils.LogUtil;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 /**
  * @author : BarryYang
  * @date : 2020/7/31 5:36 PM
  * @desc :Android  Q 适配
+ * <p>
+ * 但是在android10的时候，Google还是为开发者考虑，留了一手。在targetSdkVersion = 29应用中，设置android:requestLegacyExternalStorage="true"，
+ * 就可以不启动分区存储，让以前的文件读取正常使用。但是targetSdkVersion = 30中不行了，强制开启分区存储。
+ * 当然，作为人性化的android，还是为开发者留了一小手，如果是覆盖安装呢，可以增加android:preserveLegacyExternalStorage="true"，
+ * 暂时关闭分区存储，好让开发者完成数据迁移的工作。为什么是暂时呢？因为只要卸载重装，就会失效了。
  */
 public class ScopedStorageActivity extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1001) {
-            if (grantResults[0] == 1001) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 showToast("已经同意");
                 hasPermission = true;
             } else {
@@ -64,25 +63,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
      */
     public void createFile(View view) {
         if (hasPermission) {
-            File rootFile = new File(Cfg.ROOT_PATH);
-            if (!rootFile.exists()) {
-                boolean mkdirs = rootFile.mkdirs();
-                showLog(mkdirs ? "创建ROOT_PATH文件夹成功" : "创建文件夹失败");
-            }
-            File scopeFile = new File(Cfg.ROOT_SCOPED_PATH);
-            if (!scopeFile.exists()) {
-                boolean mkdirs = scopeFile.mkdirs();
-                showLog(mkdirs ? "创建ROOT_SCOPED_PATH文件夹成功" : "创建文件夹失败");
-            }
-            File fileName = new File(Cfg.SCOPED_STORAGE_FILE_PATH);
-            if (!fileName.exists()) {
-                try {
-                    boolean newFile = fileName.createNewFile();
-                    showLog(newFile ? "创建文件scopedstorage.txt成功" : "创建文件scopedstorage.txt失败");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            ScopedStorageManager.getInstance().createFile();
         } else {
             showToast("没有权限");
         }
@@ -95,23 +76,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
      */
     public void writeFile(View view) {
         if (hasPermission) {
-            FileOutputStream fileOutputStream = null;
-            try {
-                fileOutputStream = new FileOutputStream(Cfg.SCOPED_STORAGE_FILE_PATH, true);
-                fileOutputStream.write("BarryYang输入输出流测试DEMO\n".getBytes());
-                fileOutputStream.flush();
-                showLog("写入BarryYang输入输出流测试DEMO成功");
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (fileOutputStream != null) {
-                        fileOutputStream.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+            ScopedStorageManager.getInstance().writeFile();
         } else {
             showToast("没有权限");
         }
@@ -124,27 +89,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
      */
     public void readFile(View view) {
         if (hasPermission) {
-            FileInputStream fileInputStream = null;
-            try {
-                fileInputStream = new FileInputStream(Cfg.SCOPED_STORAGE_FILE_PATH);
-                int len;
-                //先把字节存入到缓冲数组中，一下读取整个数组的数据
-                byte[] buf = new byte[1024 * 4];
-                while ((len = fileInputStream.read(buf)) != -1) {
-                    String s = new String(buf, 0, len);
-                    showLog("读取文件成功：" + s);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (fileInputStream != null) {
-                        fileInputStream.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+            ScopedStorageManager.getInstance().readFile();
         } else {
             showToast("没有权限");
         }
@@ -157,5 +102,4 @@ public class ScopedStorageActivity extends AppCompatActivity {
     private void showLog(String msg) {
         LogUtil.printLogDebug(TAG, msg);
     }
-
 }
