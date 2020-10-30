@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat;
 import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.utils.Cfg;
 import com.barryyang.barryyangdemo.utils.LogUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -34,8 +35,11 @@ public class ScopedStorageActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scopedstorage);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1001);
+        } else {
+            hasPermission = true;
         }
     }
 
@@ -96,6 +100,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
                 fileOutputStream = new FileOutputStream(Cfg.SCOPED_STORAGE_FILE_PATH, true);
                 fileOutputStream.write("BarryYang输入输出流测试DEMO\n".getBytes());
                 fileOutputStream.flush();
+                showLog("写入BarryYang输入输出流测试DEMO成功");
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -127,7 +132,7 @@ public class ScopedStorageActivity extends AppCompatActivity {
                 byte[] buf = new byte[1024 * 4];
                 while ((len = fileInputStream.read(buf)) != -1) {
                     String s = new String(buf, 0, len);
-                    showLog(s);
+                    showLog("读取文件成功：" + s);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
