@@ -30,6 +30,15 @@ import com.barryyang.barryyangdemo.android.service.TargetServiceActivity;
 
 import com.barryyang.barryyangdemo.rxjava.RxJavaActivity;
 
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
+
 /**
  * 测试各种
  *
@@ -44,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LogUtil.printLogDebug(TAG, "onCreate");
+        Observable.range(1, 5)
+                .repeatWhen(new Function<Observable<Object>, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(Observable<Object> objectObservable) throws Exception {
+                        return objectObservable.delay(1, TimeUnit.SECONDS);
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        LogUtil.printLogDebug(TAG, "accept-->" + String.valueOf(integer));
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        LogUtil.printLogDebug(TAG, "accept-->throwable");
+                    }
+                });
     }
 
     /**

@@ -9,36 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="createFile"
-        android:text="创建文件夹" />
+        android:text="Android9上创建文件 " />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="getImei"
-        android:text="获取设备IMEI信息"/>
+        android:onClick="writeFile"
+        android:text="Android9上写入文件 " />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="getMac"
-        android:text="获取设备mac信息" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="getAndroidId"
-        android:text="获取设备AndroidId信息" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="getIMSI"
-        android:text="获取设备IMSI信息" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="getSerialNo"
-        android:text="获取设备SerialNo信息" />
+        android:onClick="readFile"
+        android:text="Android9上读取文件 " />
 
 </LinearLayout>
