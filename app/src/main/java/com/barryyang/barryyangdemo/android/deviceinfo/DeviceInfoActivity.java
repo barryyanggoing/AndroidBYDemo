@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
 import java.io.BufferedReader;
@@ -36,53 +37,31 @@ public class DeviceInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_deviceinfo);
     }
 
     /**
-     * Android 6.0以下不需要申请权限即可获取到telephonyManager.getDeviceId()
-     * <p>
-     * Android 8.0以下6.0以上的系统获取imei或者imid的api为telephonyManager.getDeviceId()，需要权限
-     * 1.若当前设备有MEID号，则优先返回MEID，否则返回IMEI号
-     * <p>
-     * Android 8.0以上10以下的系统，TelephonyManager提供了两个独立的API以获取IMEI和MEID： getImei 、 getMeid
+     * 1.Android 6.0以下不需要申请权限,通过telephonyManager.getDeviceId()获取imei码
+     * 2.Android 6.0-Android 8.0：需要申请READ_PHONE_STATE权限，可以通过getDeviceId()方法获取到IMEI码，如果用户拒绝了权限，会抛出java.lang.SecurityException异常
      */
     public void getImei(View view) {
-//        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//                // TODO: Consider calling
-//                //    ActivityCompat#requestPermissions
-//                // here to request the missing permissions, and then overriding
-//                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                //                                          int[] grantResults)
-//                // to handle the case where the user grants the permission. See the documentation
-//                // for ActivityCompat#requestPermissions for more details.
-//                return;
-//            }
-//            String deviceId = telephonyManager.getDeviceId();
-//            //Android6.0以下手机系统860268032895437
-//            LogUtil.printLogDebug(TAG, "Android6.0以下手机系统imei:" + deviceId);
-//        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-//                String deviceId = telephonyManager.getDeviceId();
-//                //Android6.0-8.0手机系统868434034446924
-//                LogUtil.printLogDebug(TAG, "Android6.0-8.0手机系统imei:" + deviceId);
-//            }
-//        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-//                String imei = telephonyManager.getImei();
-//                String meid = telephonyManager.getMeid();
-//                //Android8.0以上手机系统866716035061062，A000007AB7F5CD
-//                LogUtil.printLogDebug(TAG, "Android8.0以上手机系统imei:" + imei + "，" + meid);
-//            }
-//        } else {
-//            //Caused by: java.lang.SecurityException: getImeiForSlot: The user 10797 does not meet the requirements to access device identifiers.
-//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-//                String imei = telephonyManager.getImei();
-//                String meid = telephonyManager.getMeid();
-//                LogUtil.printLogDebug(TAG, "Android10.0以上手机系统imei:" + imei + "，" + meid);
-//            }
-//        }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+            String deviceId = telephonyManager.getDeviceId();
+            LogUtil.printLogDebug(TAG, "Android6.0以下获取imei:" + deviceId);
+        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+                TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+                String deviceId = telephonyManager.getDeviceId();
+                LogUtil.printLogDebug(TAG, "Android6.0-8.0以下获取imei:" + deviceId);
+            }
+        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+                TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+                String deviceId = telephonyManager.getImei();
+                LogUtil.printLogDebug(TAG, "Android8.0-10.0以下获取imei:" + deviceId);
+            }
+        }
     }
 
     /**

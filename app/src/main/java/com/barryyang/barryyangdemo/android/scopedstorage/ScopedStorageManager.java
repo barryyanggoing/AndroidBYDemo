@@ -33,8 +33,8 @@ public class ScopedStorageManager {
     }
 
     public void createFile() {
-        boolean externalStorageLegacy = Environment.isExternalStorageLegacy();
-        LogUtil.printLogDebug(TAG, "是否可访问旧目录：" + externalStorageLegacy);
+        //boolean externalStorageLegacy = Environment.isExternalStorageLegacy();
+       // LogUtil.printLogDebug(TAG, "是否可访问旧目录：" + externalStorageLegacy);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             new AndroidQStorageImpl().createFile();
         }
