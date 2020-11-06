@@ -82,6 +82,7 @@
         <activity android:name=".kotlin.demo.KotlinAdapterActivity" />
         <activity android:name=".kotlin.demo.KotlinCoroutineActivity" />
         <activity android:name=".android.deviceinfo.DeviceInfoActivity" />
+        <activity android:name=".okhttp.OkHttpActivity" />
 
         <service
             android:name=".android.service.LocalService"

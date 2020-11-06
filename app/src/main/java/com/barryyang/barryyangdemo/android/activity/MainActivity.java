@@ -22,6 +22,7 @@ import com.barryyang.barryyangdemo.java.JavaActivity;
 import com.barryyang.barryyangdemo.kotlin.demo.KotlinActivity;
 import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
+import com.barryyang.barryyangdemo.okhttp.OkHttpActivity;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.android.view.ViewActivity;
 import com.barryyang.barryyangdemo.java.stream.StreamActivity;
@@ -262,5 +263,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpDeviceInfo(View view) {
         startActivity(new Intent(this, DeviceInfoActivity.class));
+    }
+
+    public void okhttpRequest(View view) {
+        startActivity(new Intent(this, OkHttpActivity.class));
     }
 }
