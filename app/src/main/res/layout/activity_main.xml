@@ -32,29 +32,11 @@
             android:onClick="jumpContentProvider"
             android:text="Contentprovider测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="View"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpCustomView"
             android:text="自定义View测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Bitmap优化"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -68,29 +50,11 @@
             android:onClick="jumpLruCache"
             android:text="LruCache测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="输入输出流"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpStream"
             android:text="输入输出流测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="JAVA相关"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -98,29 +62,11 @@
             android:onClick="jumpJava"
             android:text="JAVA测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Handler"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpHandler"
             android:text="Handler测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Thread"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -128,29 +74,11 @@
             android:onClick="jumpThread"
             android:text="Thread测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="HTTP"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpHttp"
             android:text="HTTP测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="RxJava"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -158,29 +86,11 @@
             android:onClick="jumpRxJava"
             android:text="RxJava测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Glide"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpGlide"
             android:text="Glide测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Architecture Components"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -188,29 +98,11 @@
             android:onClick="jumpComponents"
             android:text="Components测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Scoped Storage"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpStorage"
             android:text="Scoped Storage测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Kotlin"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -218,29 +110,11 @@
             android:onClick="jumpKotlin"
             android:text="Kotlin测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Crash"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpCrash"
             android:text="Crash测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="设计模式"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
@@ -248,29 +122,11 @@
             android:onClick="jumpDesignModel"
             android:text="设计模式测试DEMO" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="ConstraintLayout"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="jumpConstraintLayout"
             android:text="ConstraintLayout测试DEMO" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_40"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="MotionLayout"
-            android:textColor="#fff"
-            android:textSize="@dimen/dimen_18" />
 
         <Button
             android:layout_width="match_parent"
