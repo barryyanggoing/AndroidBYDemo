@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.barryyang.barryyangdemo.R;
@@ -14,6 +13,7 @@ import com.barryyang.barryyangdemo.android.components.ComponentsActivity;
 import com.barryyang.barryyangdemo.android.constraint.ConstraintActivity;
 import com.barryyang.barryyangdemo.android.crash.CrashActivity;
 import com.barryyang.barryyangdemo.android.deviceinfo.DeviceInfoActivity;
+import com.barryyang.barryyangdemo.android.workmanager.WorkManagerActivity;
 import com.barryyang.barryyangdemo.designmodel.DesignModelActivity;
 import com.barryyang.barryyangdemo.glide.GlideActivity;
 import com.barryyang.barryyangdemo.android.handler.HandlerActivity;
@@ -23,7 +23,6 @@ import com.barryyang.barryyangdemo.kotlin.demo.KotlinActivity;
 import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.okhttp.OkHttpActivity;
-import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.barryyang.barryyangdemo.android.view.ViewActivity;
 import com.barryyang.barryyangdemo.java.stream.StreamActivity;
 import com.barryyang.barryyangdemo.android.bitmap.BitmapActivity;
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LogUtil.printLogDebug(TAG, "onCreate");
     }
 
     /**
@@ -55,12 +53,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void jumpActivity(View view) {
         startActivity(new Intent(this, LifecycleActivity.class));
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.d(TAG, "onNewIntent: ");
     }
 
     /**
@@ -265,7 +257,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, DeviceInfoActivity.class));
     }
 
+    /**
+     * okhttp
+     * @param view
+     */
     public void okhttpRequest(View view) {
         startActivity(new Intent(this, OkHttpActivity.class));
+    }
+
+    /**
+     * workmanager
+     * @param view
+     */
+    public void workmanager(View view) {
+        startActivity(new Intent(this, WorkManagerActivity.class));
     }
 }
