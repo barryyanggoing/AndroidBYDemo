@@ -11,12 +11,20 @@ import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * @author : BarryYang
@@ -33,50 +41,40 @@ public class RxJavaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rxjava);
     }
 
-    @SuppressLint("CheckResult")
     public void threadTest(View view) {
-        Observable<Integer> observable = getObservable();
-        observable
-                .observeOn(Schedulers.io())
-                .doOnNext(new Consumer<Integer>() {
-                    @Override
-                    public void accept(Integer integer) throws Exception {
-                        LogUtil.printLogDebug(TAG, "accept:" + Thread.currentThread().getName());
-                    }
-                })
-                .map(new Function<Integer, Boolean>() {
-                    @Override
-                    public Boolean apply(@NonNull Integer integer) throws Exception {
-                        LogUtil.printLogDebug(TAG, "apply:" + Thread.currentThread().getName());
-                        return integer > 3;
-                    }
-                })
-                .subscribeWith(new DisposableObserver<Object>() {
+        Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(@NonNull ObservableEmitter<String> emitter) throws Exception {
+                emitter.onNext("文章1");
+                emitter.onNext("文章2");
+                emitter.onNext("文章3");
+                emitter.onComplete();
+            }
+        });
 
-                    @Override
-                    public void onNext(@NonNull Object o) {
-                        LogUtil.printLogDebug(TAG, "onNext:" + Thread.currentThread().getName());
-                    }
+        Observer<String> observer = new Observer<String>() {
 
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                LogUtil.printLogDebug(TAG, "onSubscribe");
+            }
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        LogUtil.printLogDebug(TAG, "onError:" + Thread.currentThread().getName());
-                    }
+            @Override
+            public void onNext(@NonNull String s) {
+                LogUtil.printLogDebug(TAG, "onNext:" + s);
+            }
 
-                    @Override
-                    public void onComplete() {
-                        LogUtil.printLogDebug(TAG, "onComplete:" + Thread.currentThread().getName());
-                    }
-                });
+            @Override
+            public void onError(@NonNull Throwable e) {
+                LogUtil.printLogDebug(TAG, "onError");
+            }
+
+            @Override
+            public void onComplete() {
+                LogUtil.printLogDebug(TAG, "onComplete");
+            }
+        };
+        observable.subscribe(observer);
     }
 
-    /**
-     * 模仿okhttpUtils:okhttp在子线程执行，onresponse后在主线程
-     *
-     * @return
-     */
-    private Observable<Integer> getObservable() {
-        return Observable.just(4).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-    }
 }
