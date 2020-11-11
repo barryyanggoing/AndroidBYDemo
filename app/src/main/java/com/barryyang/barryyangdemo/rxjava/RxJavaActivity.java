@@ -45,33 +45,43 @@ public class RxJavaActivity extends AppCompatActivity {
         Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<String> emitter) throws Exception {
+                LogUtil.printLogDebug(TAG, "subscribe" + Thread.currentThread().getName());
                 emitter.onNext("文章1");
                 emitter.onNext("文章2");
                 emitter.onNext("文章3");
                 emitter.onComplete();
             }
-        });
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(@NonNull String s) throws Exception {
+                        LogUtil.printLogDebug(TAG, "apply" + Thread.currentThread().getName());
+                        return s;
+                    }
+                });
 
         Observer<String> observer = new Observer<String>() {
 
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                LogUtil.printLogDebug(TAG, "onSubscribe");
+                LogUtil.printLogDebug(TAG, "onSubscribe" + Thread.currentThread().getName());
             }
 
             @Override
             public void onNext(@NonNull String s) {
-                LogUtil.printLogDebug(TAG, "onNext:" + s);
+                LogUtil.printLogDebug(TAG, "onNext:" + s + "-->" + Thread.currentThread().getName());
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                LogUtil.printLogDebug(TAG, "onError");
+                LogUtil.printLogDebug(TAG, "onError" + Thread.currentThread().getName());
             }
 
             @Override
             public void onComplete() {
-                LogUtil.printLogDebug(TAG, "onComplete");
+                LogUtil.printLogDebug(TAG, "onComplete" + Thread.currentThread().getName());
             }
         };
 
