@@ -74,6 +74,7 @@ public class RxJavaActivity extends AppCompatActivity {
                 LogUtil.printLogDebug(TAG, "onComplete");
             }
         };
+
         observable.subscribe(observer);
     }
 
