@@ -40,7 +40,7 @@ public class HandlerActivity extends AppCompatActivity {
 
     private static class MyHandler extends Handler {
 
-        private WeakReference<HandlerActivity> weakReference;
+        private final WeakReference<HandlerActivity> weakReference;
 
         public MyHandler(HandlerActivity handlerActivity) {
             weakReference = new WeakReference<>(handlerActivity);
