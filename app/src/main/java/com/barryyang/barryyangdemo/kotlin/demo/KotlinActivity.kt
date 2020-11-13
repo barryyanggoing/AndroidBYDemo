@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.barryyang.barryyangdemo.R
-import com.barryyang.barryyangdemo.android.activity.MainActivity
 import com.barryyang.barryyangdemo.utils.LogUtil
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

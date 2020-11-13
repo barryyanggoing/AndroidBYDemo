@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.barryyang.barryyangdemo.R;
+import com.barryyang.barryyangdemo.main.MainActivity;
 
 /**
  * @author : BarryYang
