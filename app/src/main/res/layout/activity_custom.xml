@@ -1,132 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.barryyang.barryyangdemo.android.view.CustomView
-        android:id="@+id/custom_view"
-        android:layout_width="@dimen/dimen_150"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.barryyang.barryyangdemo.android.view.CustomGroupView
-        android:id="@+id/custom_group_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_30"
-        android:background="@color/colorPrimary"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/custom_view">
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="@dimen/dimen_100"
-            android:background="@color/colorAccent"
-            android:text="btaaan" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="btnaaa" />
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="btnaaaa" />
-
-    </com.barryyang.barryyangdemo.android.view.CustomGroupView>
-
-    <com.barryyang.barryyangdemo.android.view.ClockView
-        android:layout_width="@dimen/dimen_200"
-        android:layout_height="@dimen/dimen_200"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custom_group_view" />
-
-    <LinearLayout
-        android:id="@+id/parent_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_100"
-        android:layout_marginLeft="@dimen/dimen_10"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:background="@color/colorPrimary"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.barryyang.barryyangdemo.android.view.MotionView
-            android:id="@+id/motion_view"
-            android:layout_width="@dimen/dimen_100"
-            android:layout_height="@dimen/dimen_100"
-            android:layout_marginLeft="@dimen/dimen_10"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:background="@color/colorAccent" />
-    </LinearLayout>
-
-    <com.barryyang.barryyangdemo.android.view.DispatchViewGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:visibility="gone">
-
-        <com.barryyang.barryyangdemo.android.view.DispatchView
-            android:layout_width="@dimen/dimen_100"
-            android:layout_height="@dimen/dimen_100"
-            android:background="@color/colorAccent" />
-
-    </com.barryyang.barryyangdemo.android.view.DispatchViewGroup>
-
-    <com.barryyang.barryyangdemo.android.view.HorizontalScrollViewEx
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_200"
-        android:background="@color/colorAccent"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="#f908"/>-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="@color/colorPrimary"/>-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="@color/recovery_colorPrimaryDark"/>-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="#908"/>-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="#978"/>-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="@dimen/dimen_100"-->
-        <!--            android:layout_height="@dimen/dimen_100"-->
-        <!--            android:background="#508"/>-->
-
-    </com.barryyang.barryyangdemo.android.view.HorizontalScrollViewEx>
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_anim"
-        android:layout_width="@dimen/dimen_100"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="button"
-        android:onClick="performAnimation"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="defineView"
+        android:text="自定义View"
+        android:textAllCaps="false" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="eventView"
+        android:text="View事件分发"
+        android:textAllCaps="false" />
+
+</LinearLayout>

@@ -84,6 +84,8 @@
         <activity android:name=".android.deviceinfo.DeviceInfoActivity" />
         <activity android:name=".okhttp.OkHttpActivity" />
         <activity android:name=".android.workmanager.WorkManagerActivity" />
+        <activity android:name=".android.view.DefineViewActivity" />
+        <activity android:name=".android.view.ViewDispatchActivity" />
 
         <service
             android:name=".android.service.LocalService"

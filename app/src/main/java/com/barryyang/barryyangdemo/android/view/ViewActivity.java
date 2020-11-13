@@ -1,15 +1,13 @@
 package com.barryyang.barryyangdemo.android.view;
 
-import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.barryyang.barryyangdemo.R;
-import com.barryyang.barryyangdemo.utils.LogUtil;
 
 /**
  * @author : BarryYang
@@ -18,36 +16,27 @@ import com.barryyang.barryyangdemo.utils.LogUtil;
  */
 public class ViewActivity extends AppCompatActivity {
 
-    private static final String TAG = "ViewActivity";
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
-        testMotionView();
     }
 
     /**
-     * x，y,left,top都是相对父view
+     * 自定义View
+     *
+     * @param view
      */
-    private void testMotionView() {
-        final MotionView motionView = findViewById(R.id.motion_view);
-        motionView.post(new Runnable() {
-            @Override
-            public void run() {
-                int left = motionView.getLeft();
-                int top = motionView.getTop();
-                float x = motionView.getX();
-                float y = motionView.getY();
-                LogUtil.printLogDebug(TAG, "motionview相对于父view:" + left + "----" + top);
-                LogUtil.printLogDebug(TAG, "motionview的坐标位置:" + x + "----" + y);
-            }
-        });
+    public void defineView(View view) {
+        startActivity(new Intent(this, DefineViewActivity.class));
     }
 
-    public void performAnimation(View view) {
-        Button button = findViewById(R.id.btn_anim);
-        ViewWrapper viewWrapper = new ViewWrapper(button);
-        ObjectAnimator.ofInt(viewWrapper, "width", 500).setDuration(1000).start();
+    /**
+     * 事件分发
+     *
+     * @param view
+     */
+    public void eventView(View view) {
+        startActivity(new Intent(this, ViewDispatchActivity.class));
     }
 }
