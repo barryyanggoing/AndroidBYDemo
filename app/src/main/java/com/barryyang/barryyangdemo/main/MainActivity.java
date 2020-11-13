@@ -30,35 +30,35 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         List<PublishInfo> list = new ArrayList<>();
-        list.add(new PublishInfo(PublishType.PT_LIFECYCLE, "Activity生命周期"));
-        list.add(new PublishInfo(PublishType.PT_SERVICE, "Service生命周期"));
-        list.add(new PublishInfo(PublishType.PT_BROADCAST, "广播相关"));
-        list.add(new PublishInfo(PublishType.PT_VIEW, "view相关"));
-        list.add(new PublishInfo(PublishType.PT_BITMAP, "bitmap相关"));
+        list.add(new PublishInfo(PublishType.PT_LIFECYCLE, "Activity"));
+        list.add(new PublishInfo(PublishType.PT_SERVICE, "Service"));
+        list.add(new PublishInfo(PublishType.PT_BROADCAST, "BroadCast"));
+        list.add(new PublishInfo(PublishType.PT_VIEW, "View"));
+        list.add(new PublishInfo(PublishType.PT_BITMAP, "Bitmap"));
         list.add(new PublishInfo(PublishType.PT_LRUCHCHE, "LruCache"));
-        list.add(new PublishInfo(PublishType.PT_STREAM, "输入输出流"));
-        list.add(new PublishInfo(PublishType.PT_JAVA, "java相关"));
-        list.add(new PublishInfo(PublishType.PT_HANDLER, "handler消息机制"));
-        list.add(new PublishInfo(PublishType.PT_THREAD, "Thread相关"));
-        list.add(new PublishInfo(PublishType.PT_HTTP, "http相关"));
-        list.add(new PublishInfo(PublishType.PT_RXJAVA, "RxJava相关"));
-        list.add(new PublishInfo(PublishType.PT_GLIDE, "Glide相关"));
+        list.add(new PublishInfo(PublishType.PT_STREAM, "Stream"));
+        list.add(new PublishInfo(PublishType.PT_JAVA, "Java"));
+        list.add(new PublishInfo(PublishType.PT_HANDLER, "Handler消息机制"));
+        list.add(new PublishInfo(PublishType.PT_THREAD, "Thread"));
+        list.add(new PublishInfo(PublishType.PT_HTTP, "Http"));
+        list.add(new PublishInfo(PublishType.PT_RXJAVA, "RxJava"));
+        list.add(new PublishInfo(PublishType.PT_GLIDE, "Glide"));
         list.add(new PublishInfo(PublishType.PT_COMPONENTS, "Components"));
         list.add(new PublishInfo(PublishType.PT_ANDROIDQ, "Android Q适配"));
-        list.add(new PublishInfo(PublishType.PT_KOTLIN, "kotlin相关"));
-        list.add(new PublishInfo(PublishType.PT_CRASH, "crash"));
+        list.add(new PublishInfo(PublishType.PT_KOTLIN, "Kotlin"));
+        list.add(new PublishInfo(PublishType.PT_CRASH, "Crash"));
         list.add(new PublishInfo(PublishType.PT_DESIGNMODEL, "设计模式"));
         list.add(new PublishInfo(PublishType.PT_CONSTRAINTLAYOUT, "ConstraintLayout"));
         list.add(new PublishInfo(PublishType.PT_MOTIONLAYOUT, "MotionLayout"));
         list.add(new PublishInfo(PublishType.PT_DEVICE_INFO, "设备标识"));
-        list.add(new PublishInfo(PublishType.PT_OKHTTP, "okhttp"));
-        list.add(new PublishInfo(PublishType.PT_WORKMANAGER, "workmanager"));
+        list.add(new PublishInfo(PublishType.PT_OKHTTP, "OkHttp"));
+        list.add(new PublishInfo(PublishType.PT_WORKMANAGER, "WorkManager"));
         mainAdapter.setDataList(list);
     }
 
     private void initView() {
         RecyclerView recyclerView = findViewById(R.id.recycler_list);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         mainAdapter = new MainAdapter();
         recyclerView.setAdapter(mainAdapter);
     }
