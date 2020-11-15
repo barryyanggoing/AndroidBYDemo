@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         List<PublishInfo> list = new ArrayList<>();
         list.add(new PublishInfo(PublishType.PT_LIFECYCLE, "Activity"));
         list.add(new PublishInfo(PublishType.PT_SERVICE, "Service"));
-        list.add(new PublishInfo(PublishType.PT_BROADCAST, "BroadCast"));
+        list.add(new PublishInfo(PublishType.PT_BROADCAST, "BroadcastReceiver"));
         list.add(new PublishInfo(PublishType.PT_VIEW, "View"));
         list.add(new PublishInfo(PublishType.PT_BITMAP, "Bitmap"));
         list.add(new PublishInfo(PublishType.PT_LRUCHCHE, "LruCache"));

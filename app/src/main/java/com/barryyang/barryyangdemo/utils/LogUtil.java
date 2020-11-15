@@ -12,4 +12,8 @@ public class LogUtil {
     public static void printLogDebug(String tag, String logInfo) {
         Log.d(tag, logInfo);
     }
+
+    public static void printLogDebug(String logInfo) {
+        Log.d("barryyang.tag", logInfo);
+    }
 }

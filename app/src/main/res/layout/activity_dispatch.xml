@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.barryyang.barryyangdemo.android.view.DispatchView
+            android:id="@+id/dispatchView"
             android:layout_width="@dimen/dimen_100"
             android:layout_height="@dimen/dimen_100"
             android:background="@color/colorAccent" />
