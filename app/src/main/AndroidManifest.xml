@@ -86,6 +86,7 @@
         <activity android:name=".android.workmanager.WorkManagerActivity" />
         <activity android:name=".android.view.DefineViewActivity" />
         <activity android:name=".android.view.ViewDispatchActivity" />
+        <activity android:name=".android.notification.NotificationActivity" />
 
         <service
             android:name=".android.service.LocalService"
@@ -96,6 +97,12 @@
             </intent-filter>
         </service>
         <service android:name=".android.service.CustomIntentService" />
+
+        <receiver android:name=".android.notification.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="ACTION_RECEIVER" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

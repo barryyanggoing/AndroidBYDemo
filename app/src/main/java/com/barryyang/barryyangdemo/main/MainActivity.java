@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new PublishInfo(PublishType.PT_DEVICE_INFO, "设备标识"));
         list.add(new PublishInfo(PublishType.PT_OKHTTP, "OkHttp"));
         list.add(new PublishInfo(PublishType.PT_WORKMANAGER, "WorkManager"));
+        list.add(new PublishInfo(PublishType.PT_NOTIFICATION, "Notification"));
         mainAdapter.setDataList(list);
     }
 

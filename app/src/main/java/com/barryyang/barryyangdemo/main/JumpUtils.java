@@ -17,6 +17,7 @@ import com.barryyang.barryyangdemo.android.crash.CrashActivity;
 import com.barryyang.barryyangdemo.android.deviceinfo.DeviceInfoActivity;
 import com.barryyang.barryyangdemo.android.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
+import com.barryyang.barryyangdemo.android.notification.NotificationActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.android.service.TargetServiceActivity;
 import com.barryyang.barryyangdemo.android.view.ViewActivity;
@@ -63,6 +64,7 @@ public class JumpUtils {
         PATH.put(PublishType.PT_DEVICE_INFO, DeviceInfoActivity.class.getName());
         PATH.put(PublishType.PT_OKHTTP, OkHttpActivity.class.getName());
         PATH.put(PublishType.PT_WORKMANAGER, WorkManagerActivity.class.getName());
+        PATH.put(PublishType.PT_NOTIFICATION, NotificationActivity.class.getName());
     }
 
     private static JumpUtils instance = new JumpUtils();
