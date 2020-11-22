@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new PublishInfo(PublishType.PT_OKHTTP, "OkHttp"));
         list.add(new PublishInfo(PublishType.PT_WORKMANAGER, "WorkManager"));
         list.add(new PublishInfo(PublishType.PT_NOTIFICATION, "Notification"));
+        list.add(new PublishInfo(PublishType.PT_WINDOW, "Window"));
         mainAdapter.setDataList(list);
     }
 

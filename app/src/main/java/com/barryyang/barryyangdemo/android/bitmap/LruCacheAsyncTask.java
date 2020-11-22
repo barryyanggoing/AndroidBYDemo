@@ -34,6 +34,7 @@ public class LruCacheAsyncTask extends AsyncTask<String, Integer, Bitmap> {
         Bitmap bitmap = downloadUrlToStream(strings[0]);
         if (bitmap != null) {
             LruCacheUtils.getInstance().addBitmapToCache(strings[0], bitmap);
+            publishProgress(60);
         }
         return bitmap;
     }
@@ -41,7 +42,7 @@ public class LruCacheAsyncTask extends AsyncTask<String, Integer, Bitmap> {
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
-        LogUtil.printLogDebug(TAG, "onProgressUpdate");
+        LogUtil.printLogDebug(TAG, "onProgressUpdate" + values[0]);
     }
 
     @Override

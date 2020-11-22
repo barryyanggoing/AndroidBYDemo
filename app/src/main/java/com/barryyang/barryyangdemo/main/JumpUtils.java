@@ -21,6 +21,7 @@ import com.barryyang.barryyangdemo.android.notification.NotificationActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.android.service.TargetServiceActivity;
 import com.barryyang.barryyangdemo.android.view.ViewActivity;
+import com.barryyang.barryyangdemo.android.window.WindowActivity;
 import com.barryyang.barryyangdemo.android.workmanager.WorkManagerActivity;
 import com.barryyang.barryyangdemo.designmodel.DesignModelActivity;
 import com.barryyang.barryyangdemo.glide.GlideActivity;
@@ -65,6 +66,7 @@ public class JumpUtils {
         PATH.put(PublishType.PT_OKHTTP, OkHttpActivity.class.getName());
         PATH.put(PublishType.PT_WORKMANAGER, WorkManagerActivity.class.getName());
         PATH.put(PublishType.PT_NOTIFICATION, NotificationActivity.class.getName());
+        PATH.put(PublishType.PT_WINDOW, WindowActivity.class.getName());
     }
 
     private static JumpUtils instance = new JumpUtils();

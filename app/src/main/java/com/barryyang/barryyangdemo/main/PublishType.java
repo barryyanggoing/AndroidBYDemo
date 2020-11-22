@@ -31,4 +31,5 @@ public class PublishType {
     public static final int PT_OKHTTP = 22;
     public static final int PT_WORKMANAGER = 23;
     public static final int PT_NOTIFICATION = 24;
+    public static final int PT_WINDOW = 25;
 }
