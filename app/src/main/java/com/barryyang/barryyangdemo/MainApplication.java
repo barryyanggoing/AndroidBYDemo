@@ -3,6 +3,8 @@ package com.barryyang.barryyangdemo;
 import android.app.Application;
 import android.content.Context;
 
+import androidx.multidex.MultiDex;
+
 import com.barryyang.barryyangdemo.android.scopedstorage.DownloadFileTransfer;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageManager;
 import com.barryyang.barryyangdemo.utils.LogUtil;
@@ -38,6 +40,7 @@ public class MainApplication extends Application {
         LogUtil.printLogDebug(TAG, "attachBaseContext()");
         int integerByKey = PreferenceUtil.getInstance(this).getIntegerByKey(PreferenceUtil.PrefKey.PREF_KEY_CRASH_COUNT, 0);
         LogUtil.printLogDebug(TAG, String.valueOf(integerByKey));
+        MultiDex.install(this);
     }
 
 }
