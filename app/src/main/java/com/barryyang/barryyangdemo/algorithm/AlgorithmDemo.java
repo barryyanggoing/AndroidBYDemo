@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author : BarryYang
@@ -19,7 +20,30 @@ public class AlgorithmDemo {
 //        test2();
 //        int[] ints = twoSum(new int[]{2, 7, 11, 15}, 9);
 //        System.out.println(Arrays.toString(ints));
-        reverseList(new ListNode(1, new ListNode(2, null)));
+        // reverseList(new ListNode(1, new ListNode(2, null)));
+        isValid("(])");
+    }
+
+    public static boolean isValid(String s) {
+        if (s.isEmpty()) return false;
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char currChar = s.charAt(i);
+            if (currChar == '{' || currChar == '[' || currChar == '(') {
+                stack.push(currChar);
+            } else {
+                if (stack.size() == 0) return false;
+                Character preChar = stack.peek();
+                if ((preChar == '{' && currChar == '}')
+                        || (preChar == '[' && currChar == ']')
+                        || (preChar == '(' && currChar == ')')) {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
     }
 
     public static class ListNode {
