@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="@dimen/dimen_60"
+        android:scaleType="fitXY"
+        android:src="@drawable/free_stock_photo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_small_ad_bg"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="@dimen/dimen_12"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_small_ad"
+        app:layout_constraintLeft_toLeftOf="@id/iv_small_ad"
+        app:layout_constraintRight_toRightOf="@id/iv_cover"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/iv_small_ad" />
+
+    <ImageView
+        android:id="@+id/iv_small_ad"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="@dimen/dimen_6"
+        android:layout_marginBottom="@dimen/dimen_6"
+        android:scaleType="fitXY"
+        android:src="@drawable/testm"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cover"
+        app:layout_constraintLeft_toLeftOf="@id/iv_cover" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_small_ad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="iv_small_ad,view_small_ad_bg" />
+
+    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+        android:id="@+id/ad_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:background="@drawable/free_stock_photo"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cover"
+        app:layout_constraintTop_toTopOf="@id/iv_cover" />
+
+    <ImageView
+        android:id="@+id/ad_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/free_stock_photo"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cover"
+        app:layout_constraintTop_toTopOf="@id/iv_cover" />
+
+    <Button
+        android:id="@+id/btn_show_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="showVideoAd"
+        android:text="视频动画展示"
+        app:layout_constraintTop_toBottomOf="@id/iv_cover" />
+
+    <Button
+        android:id="@+id/btn_hide_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="hideVideoAd"
+        android:text="视频动画隐藏"
+        app:layout_constraintTop_toBottomOf="@id/btn_show_video" />
+
+    <Button
+        android:id="@+id/btn_show_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showImageAnimation"
+        android:text="图片广告显示"
+        app:layout_constraintTop_toBottomOf="@id/btn_hide_video" />
+
+    <Button
+        android:id="@+id/btn_hide_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="hideImageAnimation"
+        android:text="图片广告点击关闭"
+        app:layout_constraintTop_toBottomOf="@id/btn_show_image" />
+
+    <Button
+        android:id="@+id/btn_time_end_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showSmallImageAnimation"
+        android:text="图片广告倒计时结束展示小广告"
+        app:layout_constraintTop_toBottomOf="@id/btn_hide_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

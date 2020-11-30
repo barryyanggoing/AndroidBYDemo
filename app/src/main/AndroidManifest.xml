@@ -88,6 +88,7 @@
         <activity android:name=".android.view.ViewDispatchActivity" />
         <activity android:name=".android.notification.NotificationActivity" />
         <activity android:name=".android.window.WindowActivity" />
+        <activity android:name=".android.animation.AnimationActivity" />
 
         <service
             android:name=".android.service.LocalService"

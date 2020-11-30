@@ -8,6 +8,7 @@ import android.util.SparseArray;
 
 import com.barryyang.barryyangdemo.android.activity.LifecycleActivity;
 import com.barryyang.barryyangdemo.android.activity.ThreadActivity;
+import com.barryyang.barryyangdemo.android.animation.AnimationActivity;
 import com.barryyang.barryyangdemo.android.bitmap.BitmapActivity;
 import com.barryyang.barryyangdemo.android.bitmap.LruCacheActivity;
 import com.barryyang.barryyangdemo.android.broadcast.BroadcastActivity;
@@ -67,6 +68,7 @@ public class JumpUtils {
         PATH.put(PublishType.PT_WORKMANAGER, WorkManagerActivity.class.getName());
         PATH.put(PublishType.PT_NOTIFICATION, NotificationActivity.class.getName());
         PATH.put(PublishType.PT_WINDOW, WindowActivity.class.getName());
+        PATH.put(PublishType.PT_ANIMATION, AnimationActivity.class.getName());
     }
 
     private static JumpUtils instance = new JumpUtils();

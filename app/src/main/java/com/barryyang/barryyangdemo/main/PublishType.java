@@ -32,4 +32,5 @@ public class PublishType {
     public static final int PT_WORKMANAGER = 23;
     public static final int PT_NOTIFICATION = 24;
     public static final int PT_WINDOW = 25;
+    public static final int PT_ANIMATION = 26;
 }

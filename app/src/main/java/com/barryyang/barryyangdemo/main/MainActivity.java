@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new PublishInfo(PublishType.PT_WORKMANAGER, "WorkManager"));
         list.add(new PublishInfo(PublishType.PT_NOTIFICATION, "Notification"));
         list.add(new PublishInfo(PublishType.PT_WINDOW, "Window"));
+        list.add(new PublishInfo(PublishType.PT_ANIMATION, "动画"));
         mainAdapter.setDataList(list);
     }
 
