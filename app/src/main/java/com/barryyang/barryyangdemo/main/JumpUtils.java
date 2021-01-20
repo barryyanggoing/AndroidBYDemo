@@ -15,6 +15,8 @@ import com.barryyang.barryyangdemo.android.broadcast.BroadcastActivity;
 import com.barryyang.barryyangdemo.android.components.ComponentsActivity;
 import com.barryyang.barryyangdemo.android.constraint.ConstraintActivity;
 import com.barryyang.barryyangdemo.android.crash.CrashActivity;
+import com.barryyang.barryyangdemo.android.demo.DemoActivity;
+import com.barryyang.barryyangdemo.android.demo.ifelse.IfElseActivity;
 import com.barryyang.barryyangdemo.android.deviceinfo.DeviceInfoActivity;
 import com.barryyang.barryyangdemo.android.handler.HandlerActivity;
 import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
@@ -40,7 +42,7 @@ import com.barryyang.barryyangdemo.rxjava.RxJavaActivity;
  */
 public class JumpUtils {
 
-    private static SparseArray<String> PATH = new SparseArray<>();
+    private static final SparseArray<String> PATH = new SparseArray<>();
 
     static {
         PATH.put(PublishType.PT_LIFECYCLE, LifecycleActivity.class.getName());
@@ -69,9 +71,11 @@ public class JumpUtils {
         PATH.put(PublishType.PT_NOTIFICATION, NotificationActivity.class.getName());
         PATH.put(PublishType.PT_WINDOW, WindowActivity.class.getName());
         PATH.put(PublishType.PT_ANIMATION, AnimationActivity.class.getName());
+        PATH.put(PublishType.PT_DEMO, DemoActivity.class.getName());
+        PATH.put(PublishType.PT_IF_ELSE, IfElseActivity.class.getName());
     }
 
-    private static JumpUtils instance = new JumpUtils();
+    private static final JumpUtils instance = new JumpUtils();
 
     public static JumpUtils getInstance() {
         return instance;

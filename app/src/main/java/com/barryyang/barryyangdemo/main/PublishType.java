@@ -33,4 +33,6 @@ public class PublishType {
     public static final int PT_NOTIFICATION = 24;
     public static final int PT_WINDOW = 25;
     public static final int PT_ANIMATION = 26;
+    public static final int PT_DEMO = 27;
+    public static final int PT_IF_ELSE = 28;
 }
