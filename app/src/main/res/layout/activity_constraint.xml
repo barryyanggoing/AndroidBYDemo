@@ -4,77 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:layout_height="match_parent">
 
-    <com.barryyang.barryyangdemo.android.constraint.CircularRevealHelper
-        android:id="@+id/circularRevealHelper"
+<!--    <com.barryyang.barryyangdemo.android.constraint.CircularRevealHelper-->
+<!--        android:id="@+id/circularRevealHelper"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:constraint_referenced_ids="layer"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <androidx.constraintlayout.helper.widget.Layer-->
+<!--        android:id="@+id/layer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        app:constraint_referenced_ids="iv_header,tv_nickname"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_header"-->
+<!--        android:layout_width="@dimen/dimen_50"-->
+<!--        android:layout_height="@dimen/dimen_50"-->
+<!--        android:visibility="gone"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/tv_nickname"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/layer"-->
+<!--        app:layout_constraintStart_toStartOf="@id/layer"-->
+<!--        app:layout_constraintTop_toTopOf="@id/layer" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_nickname"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="昵称"-->
+<!--        android:visibility="gone"-->
+<!--        android:textSize="@dimen/dimen_18"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/layer"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/iv_header"-->
+<!--        app:layout_constraintStart_toStartOf="@id/iv_header"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/iv_header" />-->
+
+<!--    <androidx.constraintlayout.helper.widget.Flow-->
+<!--        android:id="@+id/flow"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:flow_horizontalGap="@dimen/dimen_10"-->
+<!--        app:flow_verticalGap="@dimen/dimen_10"-->
+<!--        app:flow_wrapMode="aligned"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <com.barryyang.barryyangdemo.android.constraint.AdHelper-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        app:constraint_referenced_ids="iv_btn"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    &lt;!&ndash;            app:roundPercent="1" &ndash;&gt;-->
+<!--    <androidx.constraintlayout.utils.widget.ImageFilterButton-->
+<!--        android:id="@+id/iv_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        android:src="@mipmap/ic_launcher"-->
+<!--        app:altSrc="@drawable/demo1"-->
+<!--        app:crossfade="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:round="10dp" />-->
+
+    <View
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="layer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="iv_header,tv_nickname"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_header"
-        android:layout_width="@dimen/dimen_50"
-        android:layout_height="@dimen/dimen_50"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/tv_nickname"
-        app:layout_constraintEnd_toEndOf="@id/layer"
-        app:layout_constraintStart_toStartOf="@id/layer"
-        app:layout_constraintTop_toTopOf="@id/layer" />
-
-    <TextView
-        android:id="@+id/tv_nickname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="昵称"
-        android:textSize="@dimen/dimen_18"
-        app:layout_constraintBottom_toBottomOf="@id/layer"
-        app:layout_constraintEnd_toEndOf="@id/iv_header"
-        app:layout_constraintStart_toStartOf="@id/iv_header"
-        app:layout_constraintTop_toBottomOf="@id/iv_header" />
-
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:flow_horizontalGap="@dimen/dimen_10"
-        app:flow_verticalGap="@dimen/dimen_10"
-        app:flow_wrapMode="aligned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.barryyang.barryyangdemo.android.constraint.AdHelper
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="iv_btn"
-        tools:ignore="MissingConstraints" />
-
-    <!--            app:roundPercent="1" -->
-    <androidx.constraintlayout.utils.widget.ImageFilterButton
-        android:id="@+id/iv_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        app:altSrc="@drawable/demo1"
-        app:crossfade="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:round="10dp" />
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

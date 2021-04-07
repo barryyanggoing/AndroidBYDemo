@@ -23,32 +23,32 @@ class ConstraintActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_constraint)
-        layerViewClick()
-        flowShow()
+//        layerViewClick()
+       // flowShow()
     }
 
-    private fun flowShow() {
-        val flow = findViewById<Flow>(R.id.flow)
-        val constraintLayout = findViewById<ConstraintLayout>(R.id.parent)
-        val intArrayOf = mutableListOf<Int>()
-        for (i in 0..10) {
-            val textView = TextView(this)
-            textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
-            textView.setPadding(resources.getDimensionPixelSize(R.dimen.dimen_10), resources.getDimensionPixelSize(R.dimen.dimen_10)
-                    , resources.getDimensionPixelSize(R.dimen.dimen_10), resources.getDimensionPixelSize(R.dimen.dimen_10))
-            textView.id = generateViewId()
-            textView.text = "标签${i}"
-            textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            constraintLayout.addView(textView)
-            intArrayOf.add(textView.id)
-        }
-        flow.referencedIds = intArrayOf.toIntArray()
-    }
-
-    private fun layerViewClick() {
-        findViewById<Layer>(R.id.layer).setOnClickListener {
-            LogUtil.printLogDebug(TAG, "可点击")
-        }
-    }
+//    private fun flowShow() {
+//        val flow = findViewById<Flow>(R.id.flow)
+//        val constraintLayout = findViewById<ConstraintLayout>(R.id.parent)
+//        val intArrayOf = mutableListOf<Int>()
+//        for (i in 0..10) {
+//            val textView = TextView(this)
+//            textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
+//            textView.setPadding(resources.getDimensionPixelSize(R.dimen.dimen_10), resources.getDimensionPixelSize(R.dimen.dimen_10)
+//                    , resources.getDimensionPixelSize(R.dimen.dimen_10), resources.getDimensionPixelSize(R.dimen.dimen_10))
+//            textView.id = generateViewId()
+//            textView.text = "标签${i}"
+//            textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+//            constraintLayout.addView(textView)
+//            intArrayOf.add(textView.id)
+//        }
+//        flow.referencedIds = intArrayOf.toIntArray()
+//    }
+//
+//    private fun layerViewClick() {
+//        findViewById<Layer>(R.id.layer).setOnClickListener {
+//            LogUtil.printLogDebug(TAG, "可点击")
+//        }
+//    }
 
 }
