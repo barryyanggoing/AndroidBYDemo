@@ -7,7 +7,7 @@ package com.barryyang.barryyangdemo.designmodel.zerenlian
  */
 class Request {
 
-    fun getRequestLevel(): Level? {
-        return null
+    fun getRequestLevel(): Int {
+        return 0
     }
 }

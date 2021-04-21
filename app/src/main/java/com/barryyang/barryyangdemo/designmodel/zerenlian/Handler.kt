@@ -5,23 +5,27 @@ package com.barryyang.barryyangdemo.designmodel.zerenlian
  * @date : 2020/8/28 4:53 PM
  * @desc :
  */
-abstract class Handler() {
+abstract class Handler {
 
     private var nextHandler: Handler? = null
 
     fun handlerMessage(request: Request): Response? {
-        return if (getHandlerLevel() == request.getRequestLevel())
-            response(request)
-        else {
+        val response = response(request)
+        if (response == null) {
             nextHandler?.handlerMessage(request)
         }
+        return response
     }
 
     fun setNext(handler: Handler) {
         this.nextHandler = handler
     }
 
-    abstract fun response(request: Request): Response
+    fun getHandler(): Handler? {
+        return nextHandler
+    }
 
-    abstract fun getHandlerLevel(): Level
+    abstract fun response(request: Request): Response?
+
+    abstract fun nextHandler(): Handler?
 }

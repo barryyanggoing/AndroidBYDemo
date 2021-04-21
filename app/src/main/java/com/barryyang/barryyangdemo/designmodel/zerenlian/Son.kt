@@ -1,5 +1,7 @@
 package com.barryyang.barryyangdemo.designmodel.zerenlian
 
+import com.barryyang.barryyangdemo.utils.LogUtil
+
 /**
  * @author : BarryYang
  * @date : 2020/8/28 4:54 PM
@@ -7,12 +9,13 @@ package com.barryyang.barryyangdemo.designmodel.zerenlian
  */
 class Son : Handler() {
 
-    override fun response(request: Request): Response {
-        TODO("Not yet implemented")
+    override fun response(request: Request): Response? {
+        LogUtil.printLogDebug("责任链儿子")
+        return null
     }
 
-    override fun getHandlerLevel(): Level {
-        TODO("Not yet implemented")
+    override fun nextHandler(): Handler? {
+        return null
     }
 
 

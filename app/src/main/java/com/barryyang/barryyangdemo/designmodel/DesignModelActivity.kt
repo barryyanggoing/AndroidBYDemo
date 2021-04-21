@@ -12,7 +12,6 @@ import com.barryyang.barryyangdemo.designmodel.factory.method_factory.HumanFacto
 import com.barryyang.barryyangdemo.designmodel.factory.method_factory.YellowHuman
 import com.barryyang.barryyangdemo.designmodel.model.Car1
 import com.barryyang.barryyangdemo.designmodel.observer.HanFeiZi
-import com.barryyang.barryyangdemo.designmodel.observer.IHanFeiZi
 import com.barryyang.barryyangdemo.designmodel.observer.LiSi
 import com.barryyang.barryyangdemo.designmodel.observer.Observer
 import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayIH
@@ -21,9 +20,7 @@ import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
 import com.barryyang.barryyangdemo.designmodel.yuanxing.AdvTemplate
 import com.barryyang.barryyangdemo.designmodel.yuanxing.Mail
-import com.barryyang.barryyangdemo.designmodel.zerenlian.Father
-import com.barryyang.barryyangdemo.designmodel.zerenlian.Handler
-import com.barryyang.barryyangdemo.designmodel.zerenlian.Request
+import com.barryyang.barryyangdemo.designmodel.zerenlian.*
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.AbstractMediator
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Mediator
 import com.barryyang.barryyangdemo.designmodel.zhongjiezhe.Purchase
@@ -159,7 +156,12 @@ class DesignModelActivity : AppCompatActivity() {
      * 责任链模式
      */
     fun zerenModel(view: View) {
+
         val father = Father()
+        val husband = Mother()
+        val son = Son()
+        father.setNext(husband)
+        husband.setNext(son)
         val response = father.handlerMessage(Request())
     }
 

@@ -7,15 +7,16 @@ import com.barryyang.barryyangdemo.utils.LogUtil
  * @date : 2020/8/28 4:54 PM
  * @desc :
  */
-class Father : Handler() {
+class Mother : Handler() {
 
     override fun response(request: Request): Response? {
-        LogUtil.printLogDebug("责任链爸爸")
+        LogUtil.printLogDebug("责任链母亲")
         return Response()
     }
 
     override fun nextHandler(): Handler? {
-        return Mother()
+        return Son()
     }
+
 
 }
