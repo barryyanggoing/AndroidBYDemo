@@ -14,8 +14,8 @@ import com.barryyang.barryyangdemo.designmodel.model.Car1
 import com.barryyang.barryyangdemo.designmodel.observer.HanFeiZi
 import com.barryyang.barryyangdemo.designmodel.observer.LiSi
 import com.barryyang.barryyangdemo.designmodel.observer.Observer
-import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayIH
 import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayerImpl
+import com.barryyang.barryyangdemo.designmodel.proxy.GamePlayerProxyImpl
 import com.barryyang.barryyangdemo.designmodel.proxy.IGamePlayer
 import com.barryyang.barryyangdemo.designmodel.singleton.Singleton
 import com.barryyang.barryyangdemo.designmodel.yuanxing.AdvTemplate
@@ -97,24 +97,10 @@ class DesignModelActivity : AppCompatActivity() {
      * 代理模式
      */
     fun proxyModel(view: View) {
-//        自己玩
-//        val iGamePlayer = GamePlayerImpl("张三")
-//        iGamePlayer.login("zhangshan","123456")
-//        iGamePlayer.killBoss()
-//        iGamePlayer.upgrade()
-//        代练
-//        val gamePlayerProxyImpl = GamePlayerProxyImpl("张三")
-//        gamePlayerProxyImpl.login("zhangshan", "123456")
-//        gamePlayerProxyImpl.killBoss()
-//        gamePlayerProxyImpl.upgrade()
-//      动态代理
-        val gamePlayerImpl = GamePlayerImpl("张三")
-        val handler: InvocationHandler = GamePlayIH(gamePlayerImpl)
-        val classLoader = gamePlayerImpl.javaClass.classLoader
-        val gamePlayer = Proxy.newProxyInstance(classLoader, arrayOf<Class<*>>(IGamePlayer::class.java), handler) as IGamePlayer
-        gamePlayer.login("zhangsan", "123456")
-        gamePlayer.killBoss()
-        gamePlayer.upgrade()
+        val gamePlayerProxyImpl = GamePlayerProxyImpl("张山")
+        gamePlayerProxyImpl.login("username", "password")
+        gamePlayerProxyImpl.killBoss()
+        gamePlayerProxyImpl.upgrade()
     }
 
     /**
