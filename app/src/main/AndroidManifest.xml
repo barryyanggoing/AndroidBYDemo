@@ -50,7 +50,10 @@
 
         </activity>
         <activity android:name=".android.service.TargetServiceActivity" />
-        <activity android:name=".android.view.ViewActivity" />
+        <activity
+            android:name=".android.view.ViewActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.barryyang.barryyangdemo111" />
         <activity
             android:name=".android.bitmap.BitmapActivity"
             android:configChanges="screenSize|orientation"
