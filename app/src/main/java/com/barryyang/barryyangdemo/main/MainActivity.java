@@ -13,6 +13,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 
 import com.barryyang.barryyangdemo.R;
+import com.barryyang.barryyangdemo.utils.LogUtil;
 import com.xigua.aidldemo.AidlService;
 import com.xigua.aidldemo1.IMyBinder;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         connection = new MyServiceConnection();
         Intent intent = new Intent(this, AidlService.class);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
+        LogUtil.printLogDebug("任务栈id" + getTaskId());
     }
 
     private static class MyServiceConnection implements ServiceConnection {
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new PublishInfo(PublishType.PT_WINDOW, "Window"));
         list.add(new PublishInfo(PublishType.PT_ANIMATION, "动画"));
         list.add(new PublishInfo(PublishType.PT_DEMO, "Demo"));
+        list.add(new PublishInfo(PublishType.PT_SINGLE_TASK, "任务栈"));
         mainAdapter.setDataList(list);
     }
 

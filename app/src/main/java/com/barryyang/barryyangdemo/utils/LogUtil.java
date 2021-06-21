@@ -14,6 +14,6 @@ public class LogUtil {
     }
 
     public static void printLogDebug(String logInfo) {
-        Log.d("barryyang.tag", logInfo);
+        Log.d("BarryYang", logInfo);
     }
 }

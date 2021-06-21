@@ -23,6 +23,8 @@ import com.barryyang.barryyangdemo.android.motionlayout.MotionLayoutActivity;
 import com.barryyang.barryyangdemo.android.notification.NotificationActivity;
 import com.barryyang.barryyangdemo.android.scopedstorage.ScopedStorageActivity;
 import com.barryyang.barryyangdemo.android.service.TargetServiceActivity;
+import com.barryyang.barryyangdemo.android.task.OtherTaskActivity;
+import com.barryyang.barryyangdemo.android.task.SingleTaskActivity;
 import com.barryyang.barryyangdemo.android.view.ViewActivity;
 import com.barryyang.barryyangdemo.android.window.WindowActivity;
 import com.barryyang.barryyangdemo.android.workmanager.WorkManagerActivity;
@@ -73,6 +75,8 @@ public class JumpUtils {
         PATH.put(PublishType.PT_ANIMATION, AnimationActivity.class.getName());
         PATH.put(PublishType.PT_DEMO, DemoActivity.class.getName());
         PATH.put(PublishType.PT_IF_ELSE, IfElseActivity.class.getName());
+        PATH.put(PublishType.PT_SINGLE_TASK, SingleTaskActivity.class.getName());
+        PATH.put(PublishType.PT_OTHER_TASK, OtherTaskActivity.class.getName());
     }
 
     private static final JumpUtils instance = new JumpUtils();

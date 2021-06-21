@@ -94,6 +94,11 @@
         <activity android:name=".android.animation.AnimationActivity" />
         <activity android:name=".android.demo.DemoActivity" />
         <activity android:name=".android.demo.ifelse.IfElseActivity" />
+        <activity
+            android:name=".android.task.SingleTaskActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.barryyang.barryyangdemo.singletask" />
+        <activity android:name=".android.task.OtherTaskActivity" />
 
         <service
             android:name=".android.service.LocalService"
