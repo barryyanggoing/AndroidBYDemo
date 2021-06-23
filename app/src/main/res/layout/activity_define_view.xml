@@ -1,48 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/purple_200">
 
-    <com.barryyang.barryyangdemo.android.view.CustomView
-        android:id="@+id/custom_view"
-        android:layout_width="@dimen/dimen_150"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+    <com.barryyang.barryyangdemo.android.view.ScaleGestureDemoView
+        android:id="@+id/action_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.barryyang.barryyangdemo.android.view.CustomGroupView
-        android:id="@+id/custom_group_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_30"
-        android:background="@color/colorPrimary"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/custom_view">
+    <!--    <ImageView-->
+    <!--        android:id="@+id/iv_image"-->
+    <!--        android:layout_width="@dimen/dimen_40"-->
+    <!--        android:layout_height="@dimen/dimen_40"-->
+    <!--        android:src="@drawable/demo1"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="@dimen/dimen_100"
-            android:background="@color/colorAccent"
-            android:text="btaaan" />
+    <!--    <com.barryyang.barryyangdemo.android.view.SportsView-->
+    <!--        android:id="@+id/sportsview"-->
+    <!--        android:layout_width="@dimen/dimen_400"-->
+    <!--        android:layout_height="@dimen/dimen_400"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="btnaaa" />
+    <!--    <com.barryyang.barryyangdemo.android.view.CustomView-->
+    <!--        android:id="@+id/custom_view"-->
+    <!--        android:layout_width="@dimen/dimen_150"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="btnaaaa" />
+    <!--    <com.barryyang.barryyangdemo.android.view.CustomGroupView-->
+    <!--        android:id="@+id/custom_group_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/dimen_30"-->
+    <!--        android:background="@color/colorPrimary"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/custom_view">-->
 
-    </com.barryyang.barryyangdemo.android.view.CustomGroupView>
+    <!--        <Button-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="@dimen/dimen_100"-->
+    <!--            android:background="@color/colorAccent"-->
+    <!--            android:text="btaaan" />-->
 
-    <com.barryyang.barryyangdemo.android.view.ClockView
-        android:layout_width="@dimen/dimen_200"
-        android:layout_height="@dimen/dimen_200"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custom_group_view" />
+    <!--        <Button-->
+    <!--            android:layout_width="200dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="btnaaa" />-->
+
+    <!--        <Button-->
+    <!--            android:layout_width="50dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="btnaaaa" />-->
+
+    <!--    </com.barryyang.barryyangdemo.android.view.CustomGroupView>-->
+
+    <!--    <com.barryyang.barryyangdemo.android.view.ClockView-->
+    <!--        android:layout_width="@dimen/dimen_200"-->
+    <!--        android:layout_height="@dimen/dimen_200"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/custom_group_view" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
