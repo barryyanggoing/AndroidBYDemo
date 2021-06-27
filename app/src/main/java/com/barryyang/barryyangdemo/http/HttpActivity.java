@@ -10,6 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -42,6 +53,42 @@ public class HttpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
         initRetrofit();
+        httpRequest_Post();
+    }
+
+    private void httpRequest_Post() {
+        try {
+            URL url = new URL(BASE_URL);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("Post");
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.setUseCaches(false);
+            urlConnection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
+            urlConnection.connect();
+
+            String body = "userName=zhangsan&password=123456";
+            OutputStream outputStream = urlConnection.getOutputStream();
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
+            bufferedWriter.write(body);
+            outputStream.close();
+
+            int responseCode = urlConnection.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = urlConnection.getInputStream();
+                StringBuilder sb = new StringBuilder();
+                String line;
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
+                String result = sb.toString();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initRetrofit() {

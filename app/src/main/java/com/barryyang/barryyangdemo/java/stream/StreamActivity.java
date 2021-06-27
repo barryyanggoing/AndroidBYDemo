@@ -16,10 +16,14 @@ import com.barryyang.barryyangdemo.R;
 import com.barryyang.barryyangdemo.utils.Cfg;
 import com.barryyang.barryyangdemo.utils.LogUtil;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.RandomAccessFile;
 
 /**
@@ -45,6 +49,91 @@ public class StreamActivity extends AppCompatActivity {
             createFile(Cfg.ROOT_PATH, Cfg.RANDOM_FILE_NAME);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1001);
+        }
+    }
+
+    private void readFile(String filePath) {
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(filePath);
+            int available = fileInputStream.available();
+            byte[] bytes = new byte[available];
+            int read = fileInputStream.read(bytes);
+            String s = new String(bytes);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void moveFile(File oldFile, File newFile) {
+        BufferedInputStream bufferedInputStream = null;
+        BufferedOutputStream bufferedOutputStream = null;
+        try {
+            InputStream inputStream = new FileInputStream(oldFile);
+            bufferedInputStream = new BufferedInputStream(inputStream);
+
+            FileOutputStream fileOutputStream = new FileOutputStream(newFile);
+            bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+            int length = 0;
+            byte[] b = new byte[1024];
+            while ((length = bufferedInputStream.read(b)) != -1) {
+                bufferedOutputStream.write(b, 0, length);
+            }
+            bufferedOutputStream.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (bufferedInputStream != null) {
+                try {
+                    bufferedInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (bufferedOutputStream != null) {
+                try {
+                    bufferedOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void writeFile(String filePath, String content) {
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(filePath);
+            byte[] bytes = content.getBytes();
+            fileOutputStream.write(bytes);
+            //操作系统并不是每次输入一个字节就写入到文件中，而是首先会写入到内存中的某个缓冲区，等待缓冲区满的时候再一起发送出去
+            //而flush的作用就是不管你缓冲区有没有满，都强制写入文件，其实close内部已经调用了flush方法，但是在某些情况下，还是在立刻调用这个方法。
+            //比如实时发送消息，不可能等到缓冲区满的时候才发送出去，应该没发送一条就立刻发送出去。
+            fileOutputStream.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream != null) {
+                try {
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

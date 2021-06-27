@@ -6,6 +6,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -15,7 +16,51 @@ import java.lang.reflect.Method;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        reflection();
+//        reflection();
+        // maopao(new int[]{2, 7, 3, 9, 20, 8});
+        xuanzhe(new int[]{2, 7, 3, 9, 20, 8});
+    }
+
+    /**
+     * 选择排序
+     *
+     * @param array
+     */
+    private void xuanzhe(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = i;
+            for (int j = i; j < array.length; j++) {
+                if (array[j] < array[min]) {
+                    min = j;
+                }
+            }
+            int temp = array[i];
+            array[i] = array[min];
+            array[min] = temp;
+        }
+        for (int j : array) {
+            System.out.println(j);
+        }
+    }
+
+    /**
+     * 冒泡排序
+     *
+     * @param array
+     */
+    private void maopao(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if (array[j + 1] < array[j]) {
+                    int temp = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        for (int j : array) {
+            System.out.println(j);
+        }
     }
 
     /**
