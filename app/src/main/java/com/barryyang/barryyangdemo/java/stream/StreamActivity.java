@@ -75,6 +75,31 @@ public class StreamActivity extends AppCompatActivity {
         }
     }
 
+    private void writeFile(String filePath, String content) {
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(filePath);
+            byte[] bytes = content.getBytes();
+            fileOutputStream.write(bytes);
+            //操作系统并不是每次输入一个字节就写入到文件中，而是首先会写入到内存中的某个缓冲区，等待缓冲区满的时候再一起发送出去
+            //而flush的作用就是不管你缓冲区有没有满，都强制写入文件，其实close内部已经调用了flush方法，但是在某些情况下，还是在立刻调用这个方法。
+            //比如实时发送消息，不可能等到缓冲区满的时候才发送出去，应该没发送一条就立刻发送出去。
+            fileOutputStream.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream != null) {
+                try {
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
     private void moveFile(File oldFile, File newFile) {
         BufferedInputStream bufferedInputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
@@ -105,31 +130,6 @@ public class StreamActivity extends AppCompatActivity {
             if (bufferedOutputStream != null) {
                 try {
                     bufferedOutputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    private void writeFile(String filePath, String content) {
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(filePath);
-            byte[] bytes = content.getBytes();
-            fileOutputStream.write(bytes);
-            //操作系统并不是每次输入一个字节就写入到文件中，而是首先会写入到内存中的某个缓冲区，等待缓冲区满的时候再一起发送出去
-            //而flush的作用就是不管你缓冲区有没有满，都强制写入文件，其实close内部已经调用了flush方法，但是在某些情况下，还是在立刻调用这个方法。
-            //比如实时发送消息，不可能等到缓冲区满的时候才发送出去，应该没发送一条就立刻发送出去。
-            fileOutputStream.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fileOutputStream != null) {
-                try {
-                    fileOutputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
