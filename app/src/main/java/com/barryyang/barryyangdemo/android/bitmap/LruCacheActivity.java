@@ -1,5 +1,6 @@
 package com.barryyang.barryyangdemo.android.bitmap;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -44,5 +45,27 @@ public class LruCacheActivity extends AppCompatActivity {
         }
         mLruCacheAdapter.setDataList(list);
     }
+
+    private void bitmapFactory() {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), R.drawable.testxh, options);
+        int outWidth = options.outWidth;
+        int outHeight = options.outHeight;
+        String outMimeType = options.outMimeType;
+        options.inSampleSize = calue(outWidth, outHeight, 100, 100);
+        options.inJustDecodeBounds = false;
+        BitmapFactory.decodeResource(getResources(), R.drawable.testxh, options);
+    }
+
+    private int calue(int outWidth, int outHeight, int targetWidth, int targetHeight) {
+        if (outWidth > targetWidth || outHeight > targetHeight) {
+            int widthRound = Math.round(outWidth / 1.0f / targetWidth);
+            int heightRound = Math.round(outHeight / 1.0f / targetHeight);
+            return Math.min(widthRound, heightRound);
+        }
+        return 1;
+    }
+
 
 }

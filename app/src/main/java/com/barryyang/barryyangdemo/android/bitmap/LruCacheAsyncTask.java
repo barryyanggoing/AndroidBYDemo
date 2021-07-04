@@ -30,7 +30,7 @@ public class LruCacheAsyncTask extends AsyncTask<String, Integer, Bitmap> {
 
     @Override
     protected Bitmap doInBackground(String... strings) {
-        LogUtil.printLogDebug(TAG, "doInBackground");
+        LogUtil.printLogDebug(TAG, "doInBackground" + strings[0]);
         Bitmap bitmap = downloadUrlToStream(strings[0]);
         if (bitmap != null) {
             LruCacheUtils.getInstance().addBitmapToCache(strings[0], bitmap);
