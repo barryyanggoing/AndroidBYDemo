@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xigua.viewdemo.EventDispatchLinearLayoutA xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark"
-    android:gravity="center"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <com.xigua.viewdemo.EventDispatchLinearLayoutB
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:background="@android:color/darker_gray"
-        android:gravity="center">
+    <com.xigua.viewdemo.HorizontalScrollViewEx
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--    <com.xigua.viewdemo.EventDispatchLinearLayoutB-->
+    <!--        android:layout_width="400dp"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:background="@android:color/darker_gray"-->
+    <!--        android:gravity="center">-->
 
 
-        <com.xigua.viewdemo.EventDispatchView
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:background="@android:color/holo_blue_bright" />
+    <!--        <com.xigua.viewdemo.EventDispatchView-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:background="@android:color/holo_blue_bright" />-->
 
-    </com.xigua.viewdemo.EventDispatchLinearLayoutB>
+    <!--    </com.xigua.viewdemo.EventDispatchLinearLayoutB>-->
 
     <!--    <com.xigua.viewdemo.ViewTouch-->
     <!--        android:id="@+id/tv_move"-->
@@ -36,4 +40,4 @@
     <!--        android:layout_height="40dp"-->
     <!--        android:background="@color/black" />-->
 
-</com.xigua.viewdemo.EventDispatchLinearLayoutA>
+</androidx.appcompat.widget.LinearLayoutCompat>

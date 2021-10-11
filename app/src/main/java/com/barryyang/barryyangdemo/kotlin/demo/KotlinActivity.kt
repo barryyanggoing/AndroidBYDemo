@@ -1,5 +1,7 @@
 package com.barryyang.barryyangdemo.kotlin.demo
 
+import android.app.Activity
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -23,7 +25,6 @@ class KotlinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
-
         Observable.range(1, 5)
                 .repeatWhen { objectObservable -> objectObservable.delay(1, TimeUnit.SECONDS) }
                 .subscribeOn(Schedulers.io())
@@ -37,6 +38,11 @@ class KotlinActivity : AppCompatActivity() {
 
     fun jumpCoroutine(view: View) {
         startActivity(Intent(this, KotlinCoroutineActivity::class.java))
+    }
+
+    fun demo(strs: Source<String>) {
+        val objects: Source<Any> = strs // 这个没问题，因为 T 是一个 out-参数
+        // ……
     }
 
 }
