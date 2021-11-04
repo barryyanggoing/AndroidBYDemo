@@ -9,9 +9,11 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,12 +25,13 @@ import com.barryyang.barryyangdemo.R;
  * @date : 2020/11/13 4:26 PM
  * @desc :
  */
-public class DefineViewActivity extends AppCompatActivity {
+public class DefineViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_define_view);
+        findIds();
 //        SportsView sportsView = findViewById(R.id.sportsview);
 //        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(sportsView,"progress",0,65);
 //        objectAnimator.setDuration(1000);
@@ -39,12 +42,69 @@ public class DefineViewActivity extends AppCompatActivity {
 //        qqAnimation.setRepeatCount(2);
 //        viewById.startAnimation(qqAnimation);
 //        bezier();
-        ScaleGestureDemoView scaleGestureDemoView = findViewById(R.id.action_image);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.demo1);
-        scaleGestureDemoView.setImageBitmap(bitmap);
+//        ScaleGestureDemoView scaleGestureDemoView = findViewById(R.id.action_image);
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.demo1);
+//        scaleGestureDemoView.setImageBitmap(bitmap);
     }
 
-    private void bezier() {
+    private RelativeLayout mContentLayout;
+    private RelativeLayout.LayoutParams mLayoutParams;
+
+
+    private void findIds() {
+//        mContentLayout = findViewById(R.id.ll_content);
+//        findViewById(R.id.bt_scale_big).setOnClickListener(this);
+//        findViewById(R.id.bt_scale_small).setOnClickListener(this);
+//        mLayoutParams = (RelativeLayout.LayoutParams)
+//                mContentLayout.getLayoutParams();
+    }
+
+    @Override
+    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.bt_scale_big:
+//                animScaleBig();
+//                break;
+//            case R.id.bt_scale_small:
+//                animScaleSmall();
+//                break;
+//            default:
+//                break;
+//        }
+    }
+
+    private void animScaleBig() {
+        ValueAnimator scaleBig = ValueAnimator.ofFloat(100, 200);
+        scaleBig.setInterpolator(new LinearInterpolator());
+        scaleBig.setDuration(1000);
+        scaleBig.addUpdateListener(mListener);
+        scaleBig.start();
+    }
+
+    private ValueAnimator.AnimatorUpdateListener mListener = new ValueAnimator
+            .AnimatorUpdateListener() {
+
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            mLayoutParams.height = dp2px((float) animation.getAnimatedValue());
+            mContentLayout.setLayoutParams(mLayoutParams);
+        }
+    };
+
+    private void animScaleSmall() {
+        ValueAnimator scaleBig = ValueAnimator.ofFloat(200, 100);
+        scaleBig.setInterpolator(new LinearInterpolator());
+        scaleBig.setDuration(1000);
+        scaleBig.addUpdateListener(mListener);
+        scaleBig.start();
+    }
+
+    private int dp2px(float var1) {
+        float density = getResources().getDisplayMetrics().density;
+        return (int) (var1 * density + 0.5f);
+    }
+
+  //  private void bezier() {
 //        final ImageView imageView = findViewById(R.id.iv_image);
 //        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
 //        final int heightPixels = displayMetrics.heightPixels;
@@ -73,41 +133,41 @@ public class DefineViewActivity extends AppCompatActivity {
 //                valueAnimator.start();
 //            }
 //        });
-    }
+//    }
 
-    private static class BezierEvaluator implements TypeEvaluator<PointF> {
-
-        private final PointF point1;
-
-        public BezierEvaluator(PointF point1){
-            this.point1 = point1;
-        }
-
-        @Override
-        public PointF evaluate(float fraction, PointF startValue, PointF endValue) {
-            PointF pointF = new PointF();
-            pointF.x = startValue.x * (1 - fraction) * (1 - fraction)
-                    + 2 * fraction * (1 - fraction) * point1.x
-                    + fraction * fraction * endValue.x;
-            pointF.y = startValue.y * (1 - fraction) * (1 - fraction)
-                    + 2 * fraction * (1 - fraction) * point1.y
-                    + fraction * fraction * endValue.y;
-            return pointF;
-        }
-    }
-
-    /**
-     * 用于获取状态栏的高度。 使用Resource对象获取（推荐这种方式）
-     *
-     * @return 返回状态栏高度的像素值。
-     */
-    public static int getStatusBarHeight(Context context) {
-        int result = 0;
-        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = context.getResources().getDimensionPixelSize(resourceId);
-        }
-        return result;
-    }
+//    private static class BezierEvaluator implements TypeEvaluator<PointF> {
+//
+//        private final PointF point1;
+//
+//        public BezierEvaluator(PointF point1){
+//            this.point1 = point1;
+//        }
+//
+//        @Override
+//        public PointF evaluate(float fraction, PointF startValue, PointF endValue) {
+//            PointF pointF = new PointF();
+//            pointF.x = startValue.x * (1 - fraction) * (1 - fraction)
+//                    + 2 * fraction * (1 - fraction) * point1.x
+//                    + fraction * fraction * endValue.x;
+//            pointF.y = startValue.y * (1 - fraction) * (1 - fraction)
+//                    + 2 * fraction * (1 - fraction) * point1.y
+//                    + fraction * fraction * endValue.y;
+//            return pointF;
+//        }
+//    }
+//
+//    /**
+//     * 用于获取状态栏的高度。 使用Resource对象获取（推荐这种方式）
+//     *
+//     * @return 返回状态栏高度的像素值。
+//     */
+//    public static int getStatusBarHeight(Context context) {
+//        int result = 0;
+//        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+//        if (resourceId > 0) {
+//            result = context.getResources().getDimensionPixelSize(resourceId);
+//        }
+//        return result;
+//    }
 
 }

@@ -1,19 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/purple_200">
+    android:layout_height="match_parent">
 
-    <com.barryyang.barryyangdemo.android.view.ScaleGestureDemoView
-        android:id="@+id/action_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.barryyang.barryyangdemo.android.view.ClipView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/bt_scale_big"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:text="big" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/bt_scale_small"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/bt_scale_big"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:text="small" />-->
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/ll_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="@color/black"-->
+<!--        android:layout_alignParentBottom="true">-->
+
+<!--        <com.barryyang.barryyangdemo.android.view.AnimImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:src="@drawable/demo1" />-->
+<!--    </RelativeLayout>-->
+
+
+</RelativeLayout>
+
+
+    <!--    <com.barryyang.barryyangdemo.android.view.ScaleGestureDemoView-->
+    <!--        android:id="@+id/action_image"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <!--    <ImageView-->
     <!--        android:id="@+id/iv_image"-->
@@ -71,5 +108,3 @@
     <!--        android:layout_height="@dimen/dimen_200"-->
     <!--        app:layout_constraintLeft_toLeftOf="parent"-->
     <!--        app:layout_constraintTop_toBottomOf="@id/custom_group_view" />-->
-
-</androidx.constraintlayout.widget.ConstraintLayout>

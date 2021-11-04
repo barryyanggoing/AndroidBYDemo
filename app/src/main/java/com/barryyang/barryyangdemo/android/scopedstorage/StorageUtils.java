@@ -20,14 +20,15 @@ public class StorageUtils {
      * @return
      */
     public static String getExternalFilePath(String pType) {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File baseDirFile = MainApplication.provide().getExternalFilesDir(pType);
-            if (baseDirFile != null) {
-                return baseDirFile.getAbsolutePath();
-            }
-        }
-        return MainApplication.provide().getFilesDir().getAbsolutePath();
+//        String state = Environment.getExternalStorageState();
+//        if (Environment.MEDIA_MOUNTED.equals(state)) {
+//            File baseDirFile = MainApplication.provide().getExternalFilesDir(pType);
+//            if (baseDirFile != null) {
+//                return baseDirFile.getAbsolutePath();
+//            }
+//        }
+//        return MainApplication.provide().getFilesDir().getAbsolutePath();
+        return null;
     }
 
     /**
@@ -36,13 +37,14 @@ public class StorageUtils {
      * @return
      */
     public static File getExternalCacheDir() {
-        String state = android.os.Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File externalCacheDir = MainApplication.provide().getExternalCacheDir();
-            if (externalCacheDir != null) {
-                return externalCacheDir;
-            }
-        }
-        return MainApplication.provide().getCacheDir();
+//        String state = android.os.Environment.getExternalStorageState();
+//        if (Environment.MEDIA_MOUNTED.equals(state)) {
+//            File externalCacheDir = MainApplication.provide().getExternalCacheDir();
+//            if (externalCacheDir != null) {
+//                return externalCacheDir;
+//            }
+//        }
+//        return MainApplication.provide().getCacheDir();
+        return null;
     }
 }
