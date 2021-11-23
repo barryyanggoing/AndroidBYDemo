@@ -6,6 +6,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
 /**
@@ -18,7 +19,39 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
 //        reflection();
         // maopao(new int[]{2, 7, 3, 9, 20, 8});
-        xuanzhe(new int[]{2, 7, 3, 9, 20, 8});
+//        xuanzhe(new int[]{2, 7, 3, 9, 20, 8});
+
+
+
+        try {
+            Class userClass = Class.forName("com.barryyang.barryyangdemo.ExampleUnitTest$User$Info");
+            Field field2 = userClass.getDeclaredField("namessss");
+//            Field modifiers = Field.class.getDeclaredField("modifiers");
+//            field2.setAccessible(true);
+//            Object getname=field2.get(null);
+//            System.out.println("修改前"+getname);
+//            modifiers.setInt("name", field2.getModifiers() & ~Modifier.FINAL);
+//            field2.set(null, 1000);
+//            System.out.println("修改后"+User.Info.name);
+            Field modifiers = Field.class.getDeclaredField("modifiers");
+            modifiers.setAccessible(true);
+            modifiers.setInt(field2, field2.getModifiers() & ~Modifier.FINAL);
+            field2.set(null, 520);
+            Object getname=field2.get(null);
+            System.out.println("修改后"+getname);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static class User {
+
+        private static class Info{
+            public static final int namessss = 1200;
+            public static final int namess = 1;
+        }
+
+
     }
 
     /**

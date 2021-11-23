@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/icon_popover_close.xml" value="0.2992849846782431" />
         <entry key="app/src/main/res/drawable/label_living.xml" value="0.3067708333333333" />
+        <entry key="app/src/main/res/drawable/mediaplayer_living_recommdesc_bg.xml" value="0.2992849846782431" />
         <entry key="app/src/main/res/layout/activity_define_view.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_marquee_view.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/layout_pmd.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/layout/test_flow.xml" value="0.2890625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>

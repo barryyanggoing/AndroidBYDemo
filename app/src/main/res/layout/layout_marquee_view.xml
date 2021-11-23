@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/mediaplayer_living_recommdesc_bg">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:layout_marginLeft="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_20"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/tv_marquee"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/dimen_13" />
+
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/dimen_12"
+        android:layout_marginRight="@dimen/dimen_12"
+        android:src="@drawable/icon_popover_close" />
+
+</LinearLayout>
+
+
+
+
+
+
+

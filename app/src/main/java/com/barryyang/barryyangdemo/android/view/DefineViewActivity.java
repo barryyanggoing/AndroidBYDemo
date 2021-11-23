@@ -1,24 +1,25 @@
 package com.barryyang.barryyangdemo.android.view;
 
-import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.PointF;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
+import android.widget.HorizontalScrollView;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.barryyang.barryyangdemo.R;
+//import com.dalong.marqueeview.MarqueeView;
+import com.barryyang.barryyangdemo.utils.ScreenUtils;
+import com.gongwen.marqueen.SimpleMF;
+import com.gongwen.marqueen.SimpleMarqueeView;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author : BarryYang
@@ -31,7 +32,29 @@ public class DefineViewActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_define_view);
-        findIds();
+        final MarqueeTextView marqueeView = findViewById(R.id.simpleMarqueeView);
+        marqueeView.setText("ssssssssssssssssssssssssssssssssssssssssssssss");
+        marqueeView.start();
+//
+//        final List<String> datas = Arrays.asList("《赋得古原草送别》", "离离原上草，一岁一枯荣。", "野火烧不尽，春风吹又生。");
+////SimpleMarqueeView<T>，SimpleMF<T>：泛型T指定其填充的数据类型，比如String，Spanned等
+//        SimpleMF marqueeFactory = new SimpleMF(marqueeView.getContext());
+//        marqueeFactory.setData(datas);
+//        marqueeView.setMarqueeFactory(marqueeFactory);
+//        marqueeView.startFlipping();
+
+//    }
+//    public void start(View v){
+//        test.startScroll();
+//    }
+//    public void stop(View v){
+//        test.stopScroll();
+//    }
+//    public void startFromHead(View v){
+//        test.startFromHead();
+//    }
+
+//        findIds();
 //        SportsView sportsView = findViewById(R.id.sportsview);
 //        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(sportsView,"progress",0,65);
 //        objectAnimator.setDuration(1000);
@@ -104,7 +127,7 @@ public class DefineViewActivity extends AppCompatActivity implements View.OnClic
         return (int) (var1 * density + 0.5f);
     }
 
-  //  private void bezier() {
+    //  private void bezier() {
 //        final ImageView imageView = findViewById(R.id.iv_image);
 //        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
 //        final int heightPixels = displayMetrics.heightPixels;
@@ -169,5 +192,6 @@ public class DefineViewActivity extends AppCompatActivity implements View.OnClic
 //        }
 //        return result;
 //    }
+
 
 }
