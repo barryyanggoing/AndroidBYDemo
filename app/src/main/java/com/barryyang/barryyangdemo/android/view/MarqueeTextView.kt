@@ -20,12 +20,12 @@ class MarqueeTextView @JvmOverloads constructor(context: Context, attrs: Attribu
     /**
      * 每隔多少毫秒刷新一次UI
      */
-    private val mRefreshGap = 4
+    private val mRefreshGap = 5
 
     /**
      * 每次滚动的距离
      */
-    private val mEveryScrollDistance = 1
+    private val mEveryScrollDistance = 2
 
     /**
      * 滚动文本的宽度
@@ -87,5 +87,10 @@ class MarqueeTextView @JvmOverloads constructor(context: Context, attrs: Attribu
 
     init {
         initView()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        stop()
     }
 }

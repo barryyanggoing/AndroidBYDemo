@@ -34,7 +34,6 @@ public class DefineViewActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_define_view);
         final MarqueeTextView marqueeView = findViewById(R.id.simpleMarqueeView);
         marqueeView.setText("ssssssssssssssssssssssssssssssssssssssssssssss");
-        marqueeView.start();
 //
 //        final List<String> datas = Arrays.asList("《赋得古原草送别》", "离离原上草，一岁一枯荣。", "野火烧不尽，春风吹又生。");
 ////SimpleMarqueeView<T>，SimpleMF<T>：泛型T指定其填充的数据类型，比如String，Spanned等
